@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+
+//CalenderView
+ext {
+    PUBLISH_GROUP_ID = 'com.applandeo'
+    PUBLISH_ARTIFACT_ID = 'material-calendar-view'
+    PUBLISH_VERSION = '1.7.0'
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.example.roomhoursownerone"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //CalenderView
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+  //  implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //ApiRetroFit
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.karumi:dexter:6.0.1'
+
+    //ImageCrop
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    implementation 'id.zelory:compressor:2.1.0'
+
+    //CalenderView
+    implementation 'com.applandeo:material-calendar-view:1.7.0'
+    implementation 'com.annimon:stream:1.2.1'
+
+    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    implementation 'com.google.android.gms:play-services-location:11.8.0'
+
+   // implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+   // implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+    implementation 'com.github.darsh2:MultipleImageSelect:v0.0.4'
+   // implementation 'com.squareup:android-times-square:1.6.5@aar'
+    implementation 'com.savvi.datepicker:rangepicker:1.3.0'
+
+    //Google Login
+    //noinspection GradleCompatible
+    implementation 'com.google.firebase:firebase-messaging:9.6.1'
+    implementation 'com.google.firebase:firebase-auth:11.6.0'
+    implementation 'com.google.firebase:firebase-core:17.5.1'
+    implementation 'com.google.android.gms:play-services-auth:11.6.0'
+    implementation 'com.google.android.gms:play-services-auth:16.0.0'
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+
+    //FaceBook
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-auth'
+
+}
+apply plugin: 'com.google.gms.google-services'
+
+repositories {
+    mavenCentral()
+}

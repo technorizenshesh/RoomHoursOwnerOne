@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "17649340062",
+    "project_id": "roomhoursownerone",
+    "storage_bucket": "roomhoursownerone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17649340062:android:0d3f5b4b155f9a4d7c758f",
+        "android_client_info": {
+          "package_name": "com.example.roomhoursownerone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17649340062-nn827qnga0k893ouq5d3uu6khagsf41g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc7tWQDdyhX18Pebr6FVeC_V3GdCKky7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17649340062-nn827qnga0k893ouq5d3uu6khagsf41g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

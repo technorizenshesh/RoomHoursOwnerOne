@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPhoto.AddPhoto"
+    >
+
+    <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:background="@drawable/progresh_background"
+        android:elevation="@dimen/padding6"
+        android:padding="@dimen/padding5"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/colorPrimary"
+        android:visibility="gone"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@+id/view"
+                    android:id="@+id/recycler_preview"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/padding10"
+                    android:layout_height="250dp"
+                    android:scrollbars="vertical"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:visibility="visible"
+                    android:id="@+id/img_add"
+                    android:layout_marginTop="@dimen/padding20"
+                    android:layout_marginBottom="@dimen/padding20"
+                    android:layout_marginRight="@dimen/padding30"
+                    android:layout_marginLeft="@dimen/padding30"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/add_pic"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    >
+                </ImageView>
+
+                <RelativeLayout
+                    android:layout_margin="@dimen/padding10"
+                    android:visibility="gone"
+                    android:id="@+id/RR_preview"
+                    android:layout_gravity="right"
+                    android:layout_width="150dp"
+                    android:background="@drawable/roundbttn_red"
+                    android:layout_height="@dimen/padding40"
+                    >
+
+                    <RelativeLayout
+                        android:paddingLeft="@dimen/padding10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:textSize="@dimen/padding16"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="preview Image"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_below="@+id/img_add"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <RelativeLayout
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:id="@+id/txt_name"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="@color/black"
+                        android:text="Upload House Images"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/padding20"/>
+
+                    <ImageView
+                        android:visibility="visible"
+                        android:id="@+id/img_check"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/padding10"
+                        android:src="@drawable/check_icon"
+                        android:layout_toRightOf="@+id/txt_name"
+                        android:layout_width="@dimen/padding18"
+                        android:layout_height="@dimen/padding18">
+                    </ImageView>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_margin="@dimen/padding5"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="@color/black"
+                        android:text="(up to 10 images)"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/padding20"/>
+
+                    <TextView
+                        android:layout_marginRight="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding20"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/padding5"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_alignParentLeft="true"
+                        android:text="Photo help guests imagine staying in your place. You can start with one and add more after you pulish "
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/padding20"/>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/LL_check"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/padding30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/check_box"
+                            android:layout_width="@dimen/padding30"
+                            android:layout_height="@dimen/padding30"
+                            >
+                        </ImageView>
+                        <TextView
+                            android:id="@+id/txt_image"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:textSize="@dimen/padding16"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Image Upload"
+                            />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_marginBottom="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding30"
+                        android:id="@+id/RR_add_photo"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_red"
+                        android:layout_height="55dp">
+
+                        <RelativeLayout
+                            android:paddingLeft="@dimen/padding10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+                            <ImageView
+                                android:layout_marginRight="@dimen/padding20"
+                                android:tint="@color/white"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/img_mail"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/padding20"
+                                android:layout_height="@dimen/padding20"
+                                android:src="@drawable/left_arrow"
+                                >
+                            </ImageView>
+
+                            <TextView
+                                android:layout_marginLeft="@dimen/padding20"
+                                android:textSize="@dimen/padding16"
+                                android:textStyle="bold"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Add Photo"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/RR_next"
+                        android:layout_marginBottom="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_red"
+                        android:layout_height="55dp">
+
+                        <RelativeLayout
+                            android:paddingLeft="@dimen/padding10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+                            <ImageView
+                                android:layout_marginRight="@dimen/padding20"
+                                android:tint="@color/white"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/padding20"
+                                android:layout_height="@dimen/padding20"
+                                android:src="@drawable/left_arrow"
+                                >
+                            </ImageView>
+
+                            <TextView
+                                android:layout_marginLeft="@dimen/padding20"
+                                android:textSize="@dimen/padding16"
+                                android:textStyle="bold"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Next"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

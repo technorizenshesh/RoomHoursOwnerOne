@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RoomHoursOwnerOne</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="one_slide">Lorem Ipsum dolor sit amet,Consectetier adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Cum Sociis natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus</string>
+
+    <string name="checkInternet">Please Check Your Internet Connection</string>
+    <string name="title_activity_use_current_location">Map</string>
+    <string name="facebook_app_id">2448099172163936</string>
+</resources>

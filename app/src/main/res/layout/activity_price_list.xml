@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#F1F2FA"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_marginBottom="@dimen/padding20"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding15"
+                        android:textColor="@color/black"
+                        android:layout_marginRight="@dimen/padding20"
+                        android:textSize="@dimen/padding22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Price Options (Single checkbox - just 1 option must be clickable as a checkbox)" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/RR_recommend"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/RR_filter"
+                        >
+
+                        <ImageView
+                            android:id="@+id/img_recommend"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/padding10"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/circle_gray"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            >
+                        </ImageView>
+
+
+                        <RelativeLayout
+                            android:orientation="vertical"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_toRightOf="@+id/img_recommend"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <TextView
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Recommend Price  500.00 €  the prices are narked with values showed in the example.this option is marked by default" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/RR_customized"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/RR_filter"
+                        >
+
+                        <ImageView
+                            android:id="@+id/img_customized"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/padding10"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/check_icon"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            >
+                        </ImageView>
+
+
+                        <RelativeLayout
+                            android:orientation="vertical"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_toRightOf="@+id/img_customized"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <TextView
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Customized Price  $500.00  the costumer is free to insert the prices he wants" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/LL_recommed_price"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/padding20"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/padding18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="The Rooms Prices must follow this Price Structure" />
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price 1 Hour" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:layout_toLeftOf="@+id/txt_euro_recommed"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:id="@+id/edt_one_recommed"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"
+                                    android:singleLine="true"
+                                    android:gravity="center"
+                                    android:text="10.00"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro_recommed"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price 2 Hour" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:id="@+id/edt_two_recommed"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_toLeftOf="@+id/txt_euro2_recommed"
+                                    android:background="@null"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:singleLine="true"
+                                    android:text="15.00"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"></EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro2_recommed"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price 3 Hour" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:id="@+id/edt_three_recommed"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_toLeftOf="@+id/txt_euro3_recommed"
+                                    android:background="@null"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:singleLine="true"
+                                    android:text="20.00"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"></EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro3_recommed"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price 4 - 6 Hour" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:layout_toLeftOf="@+id/txt_euro4_recommed"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:id="@+id/edt_four_recommed"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"
+                                    android:singleLine="true"
+                                    android:gravity="center"
+                                    android:text="25.00"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro4_recommed"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price for night*" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:id="@+id/edt_five_recommed"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_toLeftOf="@+id/txt_euro5_recommed"
+                                    android:background="@null"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:singleLine="true"
+                                    android:text="30.00"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"></EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro5_recommed"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="weekend night price* "/>
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:layout_toLeftOf="@+id/txt_euro6_recommed"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:id="@+id/edt_six_recommed"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"
+                                    android:singleLine="true"
+                                    android:gravity="center"
+                                    android:text="35.00"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro6_recommed"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="visible"
+                        android:id="@+id/LL_customized_price"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/padding20"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/padding18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="The Rooms Prices must follow this Price Structure" />
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price 1 Hour" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:layout_toLeftOf="@+id/txt_euro"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:id="@+id/edt_one"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"
+                                    android:singleLine="true"
+                                    android:gravity="center"
+                                    android:hint="00.00"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price 2 Hour" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:id="@+id/edt_two"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    android:layout_toLeftOf="@+id/txt_euro2"
+                                    android:background="@null"
+                                    android:gravity="center"
+                                    android:hint="00.00"
+                                    android:inputType="number"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"></EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro2"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price 3 Hour" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:layout_toLeftOf="@+id/txt_euro3"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:id="@+id/edt_three"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"
+                                    android:singleLine="true"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:hint="00.00"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro3"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price 4 - 6 Hour" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:layout_toLeftOf="@+id/txt_euro4"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:id="@+id/edt_four"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"
+                                    android:singleLine="true"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:hint="00.00"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro4"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Price for night*" />
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:layout_toLeftOf="@+id/txt_euro5"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:id="@+id/edt_five"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"
+                                    android:singleLine="true"
+                                    android:gravity="center"
+                                    android:hint="00.00"
+                                    android:text=""
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro5"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:orientation="horizontal"
+                            android:layout_marginTop="@dimen/padding10"
+                            android:layout_marginLeft="@dimen/padding15"
+                            android:layout_marginRight="@dimen/padding15"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_toLeftOf="@+id/RR_filter"
+                            >
+
+                            <TextView
+                                android:paddingLeft="@dimen/padding10"
+                                android:layout_centerVertical="true"
+                                android:singleLine="true"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="weekend night price* "/>
+
+                            <RelativeLayout
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/roundbttn_gray"
+                                android:layout_width="150dp"
+                                android:layout_height="60dp">
+
+                                <EditText
+                                    android:layout_toLeftOf="@+id/txt_euro6"
+                                    android:background="@null"
+                                    android:inputType="number"
+                                    android:id="@+id/edt_six"
+                                    android:textColor="@color/mehroon"
+                                    android:textSize="@dimen/padding20"
+                                    android:singleLine="true"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:hint="00.00"
+                                    android:layout_width="150dp"
+                                    android:layout_height="60dp"
+                                    >
+                                </EditText>
+
+                                <TextView
+                                    android:layout_marginRight="@dimen/padding5"
+                                    android:id="@+id/txt_euro6"
+                                    android:layout_alignParentRight="true"
+                                    android:textStyle="bold"
+                                    android:layout_centerVertical="true"
+                                    android:singleLine="true"
+                                    android:textSize="@dimen/pading24"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" € " />
+
+
+                            </RelativeLayout>
+
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding15"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/padding18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add the following Disclaim : Night Prices goes From 8pm to 11am the next day" />
+
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding15"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/padding18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="**Prices Night Comprendre from 15:00 to 12:00 the next day" />
+
+
+
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding15"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/padding18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add the folloing Diclaim : night prices goes from 8Pm to 11am" />
+
+
+                    <TextView
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding15"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/padding18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Options CheckBox (By clciking the box the Host Accepts to offer a 30% Discount when the Host is just one person)" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/RR_terms"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding15"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/RR_filter"
+                        >
+
+                        <ImageView
+                            android:id="@+id/img_terms"
+                            android:layout_gravity="center"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/circle_gray"
+                            android:layout_width="@dimen/padding30"
+                            android:layout_height="@dimen/padding30"
+                            >
+                        </ImageView>
+
+
+                        <RelativeLayout
+                            android:layout_marginLeft="@dimen/padding10"
+                            android:orientation="vertical"
+                            android:layout_toRightOf="@+id/img_terms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <TextView
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/padding18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="I want to offer a 30 % discount if one person comes alone" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginBottom="@dimen/padding20"
+                        android:layout_marginTop="100dp"
+                        android:id="@+id/RR_next_prices"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_red"
+                        android:layout_height="55dp">
+
+                        <RelativeLayout
+                            android:paddingLeft="@dimen/padding10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+                            <ImageView
+                                android:layout_marginRight="@dimen/padding20"
+                                android:tint="@color/white"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/img_mail"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/padding20"
+                                android:layout_height="@dimen/padding20"
+                                android:src="@drawable/left_arrow"
+                                >
+                            </ImageView>
+
+                            <TextView
+                                android:layout_marginLeft="@dimen/padding20"
+                                android:textSize="@dimen/padding16"
+                                android:textStyle="bold"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Next"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

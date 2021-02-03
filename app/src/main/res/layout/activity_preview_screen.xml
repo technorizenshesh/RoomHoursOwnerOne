@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreviewImageSaloonScreen.PreviewScreenActivity"
+    >
+
+    <RelativeLayout
+        android:id="@+id/RR_tool"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding50"
+        >
+
+        <RelativeLayout
+            android:id="@+id/RR_back"
+            android:layout_width="@dimen/padding50"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_centerInParent="true"
+                android:src="@mipmap/back"
+                android:layout_width="@dimen/padding25"
+                android:layout_height="@dimen/padding25">
+
+            </ImageView>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Preview Images"
+            android:textSize="@dimen/padding20" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/gray"
+        android:id="@+id/view"
+        android:layout_below="@+id/RR_tool"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/view"
+        android:id="@+id/recycler_preview"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/padding10"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:visibility="visible"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPhoto.AddPhoto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/img_add"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginBottom="@dimen/padding20"
+                    android:layout_marginRight="@dimen/padding30"
+                    android:layout_marginLeft="@dimen/padding30"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/appreciation_bro"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    >
+                </ImageView>
+
+
+                <LinearLayout
+                    android:layout_below="@+id/img_add"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_gravity="center"
+                        android:id="@+id/txt_name"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="@color/black"
+                        android:text="Thanks you very much for trusting RoomsHours. it is important to answer quickly.the responce time of the first message is measured"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/padding20"/>
+
+
+
+
+                    <RelativeLayout
+                        android:layout_marginBottom="@dimen/padding20"
+                        android:layout_marginTop="@dimen/padding40"
+                        android:id="@+id/RR_Done"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_red"
+                        android:layout_height="55dp">
+
+                        <RelativeLayout
+                            android:id="@+id/RR_add_photo"
+                            android:paddingLeft="@dimen/padding10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            >
+                            <ImageView
+                                android:layout_marginRight="@dimen/padding20"
+                                android:tint="@color/white"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/img_mail"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/padding20"
+                                android:layout_height="@dimen/padding20"
+                                android:src="@drawable/left_arrow"
+                                >
+                            </ImageView>
+
+                            <TextView
+                                android:layout_marginLeft="@dimen/padding20"
+                                android:textSize="@dimen/padding16"
+                                android:textStyle="bold"
+                                android:layout_centerVertical="true"
+                                android:textColor="@color/white"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Done"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

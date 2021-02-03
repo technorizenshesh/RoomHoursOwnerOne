@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="gray">#F2F2F2</color>
+    <color name="gray_one">#FDFCFC</color>
+    <color name="white">#ffffff</color>
+    <color name="skyblue">#518DF9</color>
+    <color name="whiteSecond">#D6D6D6</color>
+    <color name="backgroundColorScreen">#F8F8F8</color>
+    <color name="black">#000000</color>
+    <color name="black1">#171717</color>
+    <color name="greyText">#999999</color>
+    <color name="lightblack">#141414</color>
+    <color name="overlayBlack">#EE292929</color>
+    <color name="overlayBlackSecond">#333333</color>
+    <color name="greyBackground">#F8F8F8</color>
+    <color name="greyBackgroundSecond">#eeeeee</color>
+    <color name="grey">#cccccc</color>
+    <color name="grayLight">#F3F3F3</color>
+    <color name="green">#26A541</color>
+    <color name="green_new">#009245</color>
+    <color name="rippleDarkRed">#3F0000</color>
+    <color name="orange">#F5D878</color>
+    <color name="dimgray">#BE696969</color>
+    <color name="dividerDark">#999999</color>
+
+    <color name="colorAccentBlue">#03a9f4</color>
+    <color name="colorAccentGrey">#999999</color>
+    <color name="colorAccentGreen">#557f5f</color>
+
+    <color name="colorAccentRed">#ff0000</color>
+    <color name="textColorPrimaryLight">#1C1C1C</color>
+    <color name="textColorSecondary">#404040</color>
+    <color name="textColorSecondaryDark">#212121</color>
+    <color name="textColorSecondaryLight">#666666</color>
+    <color name="mehroon">#911815</color>
+    <color name="light_black">#ACACAC</color>
+    <color name="Mehroon">#880D6D</color>
+    <color name="Mehroon_one">#A61916</color>
+    <color name="yellow">#D1A646</color>
+    <color name="orange_color">#F7931E</color>
+    <color name="cream">#FFFFF6</color>
+    <color name="red">#F44336</color>
+    <color name="cream_transparent">#64FFFFF6</color>
+    <color name="dark_green">#425D18</color>
+    <color name="blue">#1E90FF</color>
+    <color name="transparent">#00000000</color>
+    <color name="calendar_header">@color/colorPrimary</color>
+    <color name="calendar_header_title">#FFF</color>
+    <color name="selected_date_circle_color_app">#FF5252</color>
+    <color name="range_bg_color_app">#FFCDD2</color>
+    <color name="custom_header_text">#D80909</color>
+</resources>

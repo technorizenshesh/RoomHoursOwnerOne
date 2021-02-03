@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/slide_bg"
+    >
+
+    <com.facebook.login.widget.LoginButton
+        android:visibility="gone"
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:text="  connect_with_facebook" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/padding20"
+                android:id="@+id/img_logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/logo_one">
+            </ImageView>
+
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_below="@+id/img_logo"
+                android:layout_marginTop="@dimen/padding40"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WELCOME!"
+                android:textColor="@color/white"
+                android:textSize="@dimen/padding35"/>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginRight="@dimen/padding10"
+                android:layout_marginLeft="@dimen/padding10"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_below="@+id/img_logo"
+                android:layout_marginTop="@dimen/padding30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dummy text is test that is used in the \n publishing industry or by web designers to"
+                android:textColor="@color/white"
+                android:textSize="@dimen/padding14"/>
+
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/padding50"
+                android:id="@+id/RR_login"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/roundbttn_red"
+                android:layout_height="55dp">
+
+                <RelativeLayout
+                    android:paddingLeft="@dimen/padding10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <ImageView
+                        android:tint="@color/white"
+                        android:layout_marginLeft="@dimen/padding10"
+                        android:layout_alignParentLeft="true"
+                        android:id="@+id/img_mail"
+                        android:layout_centerVertical="true"
+                        android:layout_width="@dimen/padding25"
+                        android:layout_height="@dimen/padding25"
+                        android:src="@drawable/mail"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Continue with Email"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RR_faceBook_login"
+                android:layout_marginTop="@dimen/padding20"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/roundbttn_blue"
+                android:layout_height="55dp">
+
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/facebook"
+                    >
+
+                </ImageView>
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Continue with Facebook"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RR_google_login"
+                android:layout_marginTop="@dimen/padding20"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/roundbttn_black"
+                android:layout_height="55dp">
+
+                <ImageView
+                    android:tint="@color/white"
+                    android:layout_marginLeft="@dimen/padding15"
+                    android:layout_centerVertical="true"
+                    android:layout_width="@dimen/padding40"
+                    android:layout_height="@dimen/padding40"
+                    android:src="@drawable/google_new"
+                    >
+                </ImageView>
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Continue with Google"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

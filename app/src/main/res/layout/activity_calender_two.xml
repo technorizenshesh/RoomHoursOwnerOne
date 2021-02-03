@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalenderScreen.CalenderActivityTwo">
+
+    <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:background="@drawable/progresh_background"
+        android:elevation="@dimen/padding6"
+        android:padding="@dimen/padding5"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/colorPrimary"
+        android:visibility="gone"/>
+
+
+    <com.savvi.rangedatepicker.CalendarPickerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarStyle="outsideInset"
+        android:clipToPadding="false"
+        app:tsquare_orientation_horizontal="true"
+        app:tsquare_dividerColor="@color/transparent"
+        app:pagesColor="@color/mehroon"
+        app:anotherMonthsDaysLabelsColor="@color/mehroon"
+        app:tsquare_headerTextColor="@color/custom_header_text"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/RR_reset"
+        android:layout_below="@+id/calendar_view"
+        android:layout_marginBottom="@dimen/padding20"
+        android:layout_marginTop="@dimen/padding20"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/roundbttn_red"
+        android:layout_height="55dp"
+        >
+
+        <RelativeLayout
+            android:paddingLeft="@dimen/padding10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_marginRight="@dimen/padding20"
+                android:tint="@color/white"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/padding20"
+                android:layout_height="@dimen/padding20"
+                android:src="@drawable/left_arrow"
+                >
+            </ImageView>
+
+            <TextView
+                android:layout_marginLeft="@dimen/padding20"
+                android:textSize="@dimen/padding16"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/padding20"
+        android:layout_marginTop="@dimen/padding20"
+        android:id="@+id/RR_next"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/roundbttn_red"
+        android:layout_height="55dp">
+
+        <RelativeLayout
+            android:paddingLeft="@dimen/padding10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_marginRight="@dimen/padding20"
+                android:tint="@color/white"
+                android:layout_alignParentRight="true"
+                android:id="@+id/img_mail"
+                android:layout_centerVertical="true"
+                android:layout_width="@dimen/padding20"
+                android:layout_height="@dimen/padding20"
+                android:src="@drawable/left_arrow"
+                >
+            </ImageView>
+
+            <TextView
+                android:layout_marginLeft="@dimen/padding20"
+                android:textSize="@dimen/padding16"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

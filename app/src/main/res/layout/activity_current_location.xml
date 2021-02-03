@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+
+    <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:background="@drawable/progresh_background"
+        android:elevation="@dimen/padding6"
+        android:padding="@dimen/padding5"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/colorPrimary"
+        android:visibility="gone"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:layout_margin="@dimen/padding10"
+                    android:id="@+id/RR_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    >
+
+                    <ImageView
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        ></ImageView>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:textColor="@color/mehroon"
+                    android:layout_marginLeft="@dimen/padding10"
+                    android:id="@+id/txt_country"
+                    android:layout_below="@+id/RR_map"
+                    android:padding="@dimen/padding10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Country"
+                    android:textSize="@dimen/padding18"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/RR_street"
+                    android:layout_marginTop="@dimen/padding10"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/txt_street"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="@dimen/padding10"
+                    android:background="@drawable/roundbttn_gray"
+                    >
+
+                    <TextView
+                        android:id="@+id/edt_country"
+                        android:background="@null"
+                        android:padding="@dimen/padding10"
+                        android:textColor="@color/black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="spain"
+                        android:textSize="@dimen/padding18"
+                        />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_marginTop="@dimen/padding10"
+                    android:textColor="@color/mehroon"
+                    android:layout_marginLeft="@dimen/padding10"
+                    android:id="@+id/txt_street"
+                    android:layout_below="@+id/RR_country"
+                    android:padding="@dimen/padding10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Autonomous Community"
+                    android:textSize="@dimen/padding18"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/RR_country"
+                    android:layout_marginTop="@dimen/padding10"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/txt_country"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="@dimen/padding10"
+                    android:background="@drawable/roundbttn_gray"
+                    >
+
+                    <Spinner
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:id="@+id/spinnerAutonomous"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/nav_header_height"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="7dp"
+                        android:backgroundTint="@color/black"
+                        />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_marginTop="@dimen/padding10"
+                    android:textColor="@color/mehroon"
+                    android:layout_marginLeft="@dimen/padding10"
+                    android:layout_below="@+id/RR_country"
+                    android:padding="@dimen/padding10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City"
+                    android:textSize="@dimen/padding18"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/padding10"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/txt_country"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="@dimen/padding10"
+                    android:background="@drawable/roundbttn_gray"
+                    >
+
+                    <Spinner
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:id="@+id/spinnerCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/nav_header_height"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="7dp"
+                        android:backgroundTint="@color/black"
+                        />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:textColor="@color/mehroon"
+                    android:layout_marginLeft="@dimen/padding10"
+                    android:layout_below="@+id/RR_map"
+                    android:padding="@dimen/padding10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Street,number,floor"
+                    android:textSize="@dimen/padding18"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/padding10"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/txt_street"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="@dimen/padding10"
+                    android:background="@drawable/roundbttn_gray"
+                    >
+
+                    <EditText
+                        android:singleLine="true"
+                        android:id="@+id/edt_countryt_street"
+                        android:background="@null"
+                        android:padding="@dimen/padding10"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/padding18"
+                        />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:textColor="@color/mehroon"
+                    android:layout_marginLeft="@dimen/padding10"
+                    android:layout_below="@+id/RR_map"
+                    android:padding="@dimen/padding10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="ZipCode"
+                    android:textSize="@dimen/padding18"
+                    />
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/padding10"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/txt_street"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="@dimen/padding10"
+                    android:background="@drawable/roundbttn_gray"
+                    >
+
+                    <EditText
+                        android:id="@+id/edt_zipCode"
+                        android:singleLine="true"
+                        android:background="@null"
+                        android:padding="@dimen/padding10"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/padding18"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_below="@+id/RR_street"
+                    android:layout_marginBottom="@dimen/padding20"
+                    android:layout_marginTop="@dimen/padding20"
+                    android:id="@+id/RR_Location"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/roundbttn_red"
+                    android:layout_height="55dp">
+
+                    <RelativeLayout
+                        android:paddingLeft="@dimen/padding10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                        <ImageView
+                            android:layout_marginRight="@dimen/padding20"
+                            android:layout_alignParentRight="true"
+                            android:id="@+id/img_mail"
+                            android:layout_centerVertical="true"
+                            android:layout_width="@dimen/padding20"
+                            android:layout_height="@dimen/padding20"
+                            android:src="@drawable/left_arrow"
+                            >
+                        </ImageView>
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:textSize="@dimen/padding16"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Use Current Location"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RR_next"
+                    android:layout_below="@+id/RR_street"
+                    android:layout_marginBottom="@dimen/padding20"
+                    android:layout_marginTop="@dimen/padding10"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/roundbttn_red"
+                    android:layout_height="55dp">
+
+                    <RelativeLayout
+                        android:paddingLeft="@dimen/padding10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                        <ImageView
+                            android:layout_marginRight="@dimen/padding20"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_width="@dimen/padding20"
+                            android:layout_height="@dimen/padding20"
+                            android:src="@drawable/left_arrow"
+                            >
+                        </ImageView>
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:textSize="@dimen/padding16"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Next"
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

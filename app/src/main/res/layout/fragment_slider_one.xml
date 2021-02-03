@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/slide_bg"
+    >
+
+    <RelativeLayout
+        android:id="@+id/RR_one"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_centerHorizontal="true"
+            android:id="@+id/RR_bien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+
+            <TextView
+                android:id="@+id/btne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="i"
+                android:layout_marginTop="@dimen/padding12"
+                android:textSize="37dp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_toRightOf="@+id/btne"
+                android:id="@+id/txt_bien"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BIENVENIDO!"
+                android:layout_marginTop="@dimen/padding10"
+                android:textSize="@dimen/padding35"
+                android:textColor="@color/white" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginRight="@dimen/padding20"
+            android:layout_marginLeft="@dimen/padding20"
+            android:layout_below="@+id/RR_bien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/one_slide"
+            android:layout_marginTop="@dimen/padding30"
+            android:textSize="@dimen/padding16"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/padding30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RR_one"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_margin="@dimen/padding5"
+            android:layout_width="@dimen/padding12"
+            android:layout_height="@dimen/padding12"
+            android:background="@drawable/circle_green_solid"/>
+
+        <TextView
+            android:layout_margin="@dimen/padding5"
+            android:layout_width="@dimen/padding12"
+            android:layout_height="@dimen/padding12"
+            android:background="@drawable/circle_green_solid"/>
+
+        <TextView
+            android:layout_margin="@dimen/padding5"
+            android:layout_width="@dimen/padding12"
+            android:layout_height="@dimen/padding12"
+            android:background="@drawable/circle_green_solid"/>
+
+        <TextView
+            android:layout_margin="@dimen/padding5"
+            android:layout_width="@dimen/padding12"
+            android:layout_height="@dimen/padding12"
+            android:background="@drawable/circle_green_solid"/>
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:id="@+id/img_skip"
+        android:src="@drawable/skip_one"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        ></ImageView>
+
+
+</RelativeLayout>
