@@ -31,5 +31,6 @@ public class SliderActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPagerOuterSlider);
         sliderAdapter = new OuterSliderAdapter(getSupportFragmentManager());
         viewPager.setAdapter(sliderAdapter);
+
     }
 }

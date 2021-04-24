@@ -82,7 +82,7 @@ public class CalenderActivityTwo extends AppCompatActivity {
 
         findView();
 
-     Intent intent=getIntent();
+   Intent intent=getIntent();
         if(intent !=null)
         {
             City = intent.getStringExtra("City").toString();
@@ -207,16 +207,16 @@ public class CalenderActivityTwo extends AppCompatActivity {
 
                         Preference.save(CalenderActivityTwo.this,Preference.KEY_Room_ID,Room_id);
 
-                        Toast.makeText(CalenderActivityTwo.this, "Success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CalenderActivityTwo.this, getString(R.string.success), Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(CalenderActivityTwo.this, AddPhoto.class);
                         startActivity(intent);
-                        finishAffinity();
+                        finish();
 
 
                     }else {
 
-                        Toast.makeText(CalenderActivityTwo.this, "UnSuccess", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CalenderActivityTwo.this, getString(R.string.login_unsucces), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     RR_next.setEnabled(true);

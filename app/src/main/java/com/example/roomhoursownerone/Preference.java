@@ -11,7 +11,7 @@ public class Preference {
     public static final String APP_PREF = "KapsiePreferences";
 
     public static SharedPreferences sp;
-    public static String KEY_USER_ID = "id";
+    public static String KEY_USER_ID = "user_id";
     public static String KEY_Room_ID = "room_id";
     public static String KEY_UserName = "name";
     public static String KEY_UserRating = "rating";
@@ -23,6 +23,11 @@ public class Preference {
     public static String key_switch_shift_new = "shift_new";
     public static String key_Expiring_Document= "Expiring_Document";
     public static String key_Caring_alert= "Caring_alert";
+    public static String KEY_language= "language";
+
+    public static String KEY_ReceiverId = "receiver_id";
+    public static String KEY_SenderId = "sender_id";
+    public static String KEY_student_Name = "student_name";
 
     public static String KEY_Ordertype= "Ordertype";
     public static String KEY_OrderDay= "OrderDay";

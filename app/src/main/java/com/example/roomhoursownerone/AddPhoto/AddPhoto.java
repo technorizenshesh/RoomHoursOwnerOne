@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Parcelable;
@@ -14,6 +15,8 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -24,6 +27,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,6 +36,7 @@ import com.darsh.multipleimageselect.activities.AlbumSelectActivity;
 import com.darsh.multipleimageselect.helpers.Constants;
 import com.example.roomhoursownerone.BankAccountDetails.BankAccountDetails;
 import com.example.roomhoursownerone.CurrentLocation.CurrentLocation;
+import com.example.roomhoursownerone.DataManager;
 import com.example.roomhoursownerone.Done.DoneActivity;
 import com.example.roomhoursownerone.Preference;
 import com.example.roomhoursownerone.PreviewImageSaloonScreen.PreviewImage_Adapter;
@@ -54,7 +60,10 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import id.zelory.compressor.Compressor;
 import okhttp3.MediaType;
@@ -68,6 +77,7 @@ import retrofit2.Response;
 public class AddPhoto extends AppCompatActivity {
 
     public  static ArrayList<Bitmap> istBitImgAll=new ArrayList<>();
+    public  static ArrayList<Bitmap> istBitImgAll_new=new ArrayList<>();
 
     private RelativeLayout RR_add_photo;
     private RelativeLayout RR_next;
@@ -81,7 +91,7 @@ public class AddPhoto extends AppCompatActivity {
     private ProgressBar progressBar;
     private SessionManager sessionManager;
 
-    int PICK_IMAGE_MULTIPLE = 1;
+    int PICK_IMAGE_MULTIPLE = 0;
     String imageEncoded;
     ImageView img_add;
     List<String> imagesEncodedList;
@@ -94,6 +104,9 @@ public class AddPhoto extends AppCompatActivity {
     ArrayList<MultipartBody.Part> partsImage = new ArrayList<>();
     ArrayList< MultipartBody.Part> surveyImagesParts=new ArrayList<>();
 
+
+    HashMap<String, File> Array_hashMap = new HashMap<String, File>();
+
     private RecyclerView recycler_preview;
     private PreviewImage_Adapter mAdapter;
     private RelativeLayout RR_preview;
@@ -102,6 +115,15 @@ public class AddPhoto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_photo);
+
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(ContextCompat.getColor(
+                    this, R.color.mehroon));
+        }
+
 
         RR_add_photo=findViewById(R.id.RR_add_photo);
         RR_next=findViewById(R.id.RR_next);
@@ -120,6 +142,8 @@ public class AddPhoto extends AppCompatActivity {
 
                 Intent intent=new Intent(AddPhoto.this, PreviewScreenActivity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
 
@@ -139,6 +163,9 @@ public class AddPhoto extends AppCompatActivity {
                             @Override
                             public void onPermissionsChecked(MultiplePermissionsReport report) {
                                 if (report.areAllPermissionsGranted()) {
+
+                                    listImage.clear();
+                                    istBitImgAll.clear();
 
                                     Intent intent = new Intent();
                                     intent.setType("image/*");
@@ -171,16 +198,16 @@ public class AddPhoto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isImageSelected)
+             if(isImageSelected)
                 {
                     progressBar.setVisibility(View.VISIBLE);
                     add_to_photo();
-                 /*   Intent intent=new Intent(AddPhoto.this, BankAccountDetails.class);
+                   /*  Intent intent=new Intent(AddPhoto.this, BankAccountDetails.class);
                     startActivity(intent);*/
 
                 }else
                 {
-                    Toast.makeText(AddPhoto.this, "Please enter Minimum one Image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPhoto.this, getString(R.string.image), Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -276,25 +303,39 @@ public class AddPhoto extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         try {
+            listImage.clear();
+            istBitImgAll.clear();
             // When an Image is picked
             if (requestCode == PICK_IMAGE_MULTIPLE && resultCode == RESULT_OK
                     && null != data) {
                 // Get the Image from data
 
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                String[] filePathColumn = {
+                        MediaStore.Images.Media.DATA };
                 imagesEncodedList = new ArrayList<String>();
                 if(data.getData()!=null){
-
+                    ClipData mClipData = data.getClipData();
                     Uri mImageUri=data.getData();
-
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(AddPhoto.this.getContentResolver(), mImageUri);
                     // Get the cursor
-                    Cursor cursor = getContentResolver().query(mImageUri,
-                            filePathColumn, null, null, null);
+                    img_add.setImageBitmap(bitmap);
+
+                    imageFilePath_multile = FileUtil.from(this, mImageUri);
+                    listImage.add(imageFilePath_multile);
+                    istBitImgAll.add(bitmap);
+
+
+                    Cursor cursor = getContentResolver().query(mImageUri, filePathColumn, null, null, null);
                     // Move to first row
                     cursor.moveToFirst();
+
                     int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                     imageEncoded  = cursor.getString(columnIndex);
+                    imagesEncodedList.add(imageEncoded);
                     cursor.close();
+
+                    RR_preview.setVisibility(View.GONE);
+                    setAdapter(istBitImgAll);
 
                 } else {
                     if (data.getClipData() != null) {
@@ -319,18 +360,18 @@ public class AddPhoto extends AppCompatActivity {
                             cursor.close();
 
                         }
-                        RR_preview.setVisibility(View.VISIBLE);
+                        RR_preview.setVisibility(View.GONE);
                         setAdapter(istBitImgAll);
                         Log.v("LOG_TAG", "Selected Images" + mArrayUri.size());
                     }
                 }
             } else {
-                Toast.makeText(this, "You haven't picked Image",
+                Toast.makeText(this, getString(R.string.have_dont_imgae),
                         Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
 
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
+            Toast.makeText(this, getString(R.string.somting_wrong), Toast.LENGTH_LONG)
                     .show();
         }
 
@@ -421,72 +462,69 @@ public class AddPhoto extends AppCompatActivity {
 
     private void add_to_photo () {
 
-        String Userid=  Preference.get(AddPhoto.this,Preference.KEY_USER_ID);
-        //  String Userid=  "12";
-        String room_Id=  Preference.get(AddPhoto.this,Preference.KEY_Room_ID);
-        //String room_Id=  "19";
+       String Userid=  Preference.get(AddPhoto.this,Preference.KEY_USER_ID);
+      String room_Id=  Preference.get(AddPhoto.this,Preference.KEY_Room_ID);
 
-        MultipartBody.Part[] surveyImagesParts = new MultipartBody.Part[listImage
-                .size()];
-
-        MultipartBody.Part imgFile = null;
-        if (listImage == null) {
-
-        } else {
-            for(int index = 0; index <listImage.size();index++)
-            {
-                RequestBody requestFileOne = RequestBody.create(MediaType.parse("image/*"), listImage.get(index));
-                imgFile = MultipartBody.Part.createFormData("image", listImage.get(index).getName(), requestFileOne);
-                surveyImagesParts[index] =imgFile;
-            }
+        List<MultipartBody.Part> parts = new ArrayList<>();
+        for (int index = 0; index < listImage.size(); index++) {
+            File file = DataManager.getInstance().saveBitmapToFile(new File(String.valueOf(listImage.get(index))));
+            parts.add( MultipartBody.Part.createFormData("image[]", file.getName(), RequestBody.create(MediaType.parse("image/*"), file)));
         }
 
+            Log.e("parts :","parts ="+parts);
+        
         RequestBody UserId = RequestBody.create(MediaType.parse("text/plain"), Userid);
         RequestBody room_id = RequestBody.create(MediaType.parse("text/plain"), room_Id );
 
         Call<ResponseBody> call = RetrofitClients
                 .getInstance()
                 .getApi()
-                .add_to_photo(UserId,room_id ,surveyImagesParts);
+                .add_to_photo(UserId,room_id,parts);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-                try {
+                if(response !=null) {
+                    try {
 
-                    RR_add_photo.setEnabled(true);
+                        RR_add_photo.setEnabled(true);
 
-                    progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
 
-                    JSONObject jsonObject = new JSONObject(response.body().string());
+                        JSONObject jsonObject = new JSONObject(response.body().string());
 
-                    String status   = jsonObject.getString ("status");
-                    String message = jsonObject.getString("message");
+                        String status = jsonObject.getString("status");
+                        String message = jsonObject.getString("message");
 
 
-                    if (status.equalsIgnoreCase("1")) {
+                        if (status.equalsIgnoreCase("1")) {
 
-                        Toast.makeText(AddPhoto.this, message, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddPhoto.this, message, Toast.LENGTH_SHORT).show();
 
-                        Count++;
-                        img_check.setVisibility(View.VISIBLE);
-                        LL_check.setVisibility(View.VISIBLE);
-                        txt_image.setText("Image Upload");
+                            Count++;
+                            img_check.setVisibility(View.VISIBLE);
+                            LL_check.setVisibility(View.VISIBLE);
+                            txt_image.setText("Image Upload");
 
-                        Intent intent=new Intent(AddPhoto.this, DoneActivity.class);
-                        startActivity(intent);
+                            Intent intent = new Intent(AddPhoto.this, DoneActivity.class);
+                            startActivity(intent);
+                            finish();
 
-                    } else {
-                        Toast.makeText(AddPhoto.this, message, Toast.LENGTH_SHORT).show();
-                        //  checkOut_cartId.setEnabled(true);
+                        } else {
+                            Toast.makeText(AddPhoto.this, message, Toast.LENGTH_SHORT).show();
+                            //  checkOut_cartId.setEnabled(true);
+                        }
+
+                    } catch (JSONException e) {
+                        Toast.makeText(AddPhoto.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        Toast.makeText(AddPhoto.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
-
-                } catch (JSONException e) {
-                    Toast.makeText(AddPhoto.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    Toast.makeText(AddPhoto.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
+                }else
+                {
+                    Toast.makeText(AddPhoto.this, R.string.check, Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -507,21 +545,19 @@ public class AddPhoto extends AppCompatActivity {
 
         // modelList.add(new PreviewModel(R.drawable.add_pic));
 
-        mAdapter = new PreviewImage_Adapter(AddPhoto.this, istBitImgAll);
+        mAdapter = new PreviewImage_Adapter(AddPhoto.this, istBitImgAll_new);
 
         recycler_preview.setHasFixedSize(true);
         // use a linear layout manager
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recycler_preview.setLayoutManager(linearLayoutManager);
+        recycler_preview.setLayoutManager(new GridLayoutManager(this, 3));
         recycler_preview.setAdapter(mAdapter);
 
         mAdapter.SetOnItemClickListener(new PreviewImage_Adapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position, Bitmap model) {
-
-                Intent intent=new Intent(AddPhoto.this, PreviewScreenActivity.class);
-                startActivity(intent);
-
+             /*   Intent intent=new Intent(AddPhoto.this, PreviewScreenActivity.class);
+                startActivity(intent);*/
             }
         });
     }

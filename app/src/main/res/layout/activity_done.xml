@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grayLight"
     tools:context=".AddPhoto.AddPhoto">
 
     <ScrollView
@@ -29,7 +30,7 @@
                     android:layout_marginBottom="@dimen/padding20"
                     android:layout_marginRight="@dimen/padding30"
                     android:layout_marginLeft="@dimen/padding30"
-                    android:scaleType="centerCrop"
+                    android:scaleType="fitXY"
                     android:src="@drawable/appreciation_bro"
                     android:layout_centerHorizontal="true"
                     android:layout_width="match_parent"
@@ -51,7 +52,7 @@
                         android:id="@+id/txt_name"
                         android:layout_alignParentLeft="true"
                         android:textColor="@color/black"
-                        android:text="Thanks you very much for trusting RoomsHours. it is important to answer quickly.the responce time of the first message is measured"
+                        android:text="@string/thanks_you_very_much_for_trusting_roomshours_it_is_important_to_answer_quickly_the_responce_time_of_the_first_message_is_measured"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/padding20"/>
@@ -95,7 +96,7 @@
                                 android:textColor="@color/white"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Done"
+                                android:text="@string/done"
                                 />
 
                         </RelativeLayout>

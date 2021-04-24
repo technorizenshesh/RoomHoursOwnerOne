@@ -27,6 +27,9 @@ public class OuterSliderAdapter extends FragmentPagerAdapter {
                 case 3:
                     SliderFourFragment sliderFourFragment = new SliderFourFragment();
                 return sliderFourFragment;
+                case 4:
+                    SliderFiveFragment SliderFiveFragment = new SliderFiveFragment();
+                return SliderFiveFragment;
             default:
                 return null;
         }
@@ -34,6 +37,6 @@ public class OuterSliderAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 5;
     }
 }

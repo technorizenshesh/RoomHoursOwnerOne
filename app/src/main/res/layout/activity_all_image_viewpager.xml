@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayLight"
+    tools:context=".AllImageView.AllImageViewpager"
+    >
+
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/progressBar"
+            android:background="@drawable/progresh_background"
+            android:elevation="@dimen/padding6"
+            android:padding="@dimen/padding5"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/colorPrimary"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:id="@+id/txt_emty"
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Room Add Room"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/padding14" />
+
+        <RelativeLayout
+            android:background="@color/mehroon"
+            android:id="@+id/RR_tool"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding50"
+            >
+
+                <RelativeLayout
+                    android:id="@+id/RR_back"
+                    android:layout_width="@dimen/padding50"
+                    android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@mipmap/back"
+                            android:layout_centerInParent="true"
+                            android:layout_width="@dimen/padding25"
+                            android:layout_height="@dimen/padding25"
+                            >
+
+                        </ImageView>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:singleLine="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/all_image"
+                    android:visibility="visible"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/padding18" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginTop="60dp"
+            android:layout_below="@+id/RR_tool"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+                <RelativeLayout
+                    android:layout_margin="@dimen/padding30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginBottom="8dp"
+                            />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/SliderDots"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_margin="@dimen/padding20"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/RR_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_all_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    android:layoutDirection="rtl"
+                    android:visibility="visible"
+                    />
+
+        </RelativeLayout>
+
+</RelativeLayout>

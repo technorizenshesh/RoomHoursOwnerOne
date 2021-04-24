@@ -1,17 +1,25 @@
 package com.example.roomhoursownerone.Utills;
 
+import com.example.roomhoursownerone.AllRoomImage.AllImageModel;
 import com.example.roomhoursownerone.CurrentLocation.CityModel;
 import com.example.roomhoursownerone.CurrentLocation.StateModel;
+import com.example.roomhoursownerone.HomeScreen.ApiModel.GetFavModel;
 import com.example.roomhoursownerone.LoginScreen.LoginModel;
+import com.example.roomhoursownerone.MessageFragment.ChatConversation;
+import com.example.roomhoursownerone.MessageFragment.GetChat;
 
-import java.util.ArrayList;
+
+import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
+import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -24,7 +32,7 @@ public interface Api {
     String SocialloginApi ="social_login";
     String forgotPassword ="forgetPassword";
     String logout ="logout";
-    String getProfile ="getMyProfile";
+    String getProfile ="get_profile";
     String getState = "get_state";
     String addVideo = "addVideo";
     String notification = "getNotification";
@@ -34,6 +42,9 @@ public interface Api {
     String addLike = "addLikes";
     String dislike = "unLikeById";
     String get_city = "get_city";
+    String get_room_detailsBY_id = "get_room_detailsBY_id";
+    String get_room_image = "get_all_room_image";
+    String delete_room_details = "delete_room_details";
     String getALLfriend = "getALLfriend";
     String getBuyingFriend = "getBuyingFriend";
     String getSellingFriend = "getSellingFriend";
@@ -44,7 +55,9 @@ public interface Api {
     String add_to_photo = "add_photo_room_new";
     String add_details = "add_details";
     String addBankDetails = "addBankDetails";
-
+    String get_conversation_detail ="get_conversation_detail";
+    String get_chat ="get_chat";
+    String insert_chat ="insert_chat";
 
    /* @Multipart
     @POST(add_to_photo)
@@ -54,13 +67,26 @@ public interface Api {
            // @Part MultipartBody.Part part
     );
 */
-    @Multipart
+   @Multipart
+   @POST(add_to_photo)
+   Call<ResponseBody>add_to_photo(
+           @Part("user_id") RequestBody user_id,
+           @Part("room_id") RequestBody room_id,
+           @Part List<MultipartBody.Part> file);
+
+
+/*@Multipart
     @POST(add_to_photo)
     Call<ResponseBody>add_to_photo(
             @Part("user_id") RequestBody user_id,
             @Part("room_id ") RequestBody room_id,
-            @Part MultipartBody.Part[] part
-    );
+            @Part MultipartBody.Part[] surveyImage
+    );*/
+
+
+
+
+
 
    @FormUrlEncoded
    @POST(signUp)
@@ -138,7 +164,7 @@ public interface Api {
    @FormUrlEncoded
    @POST(getProfile)
     Call<LoginModel>getProfile(
-           @Field("email") String email
+           @Field("user_id") String user_id
    );
 
    @FormUrlEncoded
@@ -202,6 +228,46 @@ public interface Api {
     @POST(get_city)
     Call<CityModel>get_city(
             @Field("state_id") String userID
+    );
+
+    @FormUrlEncoded
+    @POST(get_room_detailsBY_id)
+    Call<GetFavModel>get_room_detailsBY_id(
+            @Field("user_id") String user_id
+    );
+
+  @FormUrlEncoded
+    @POST(get_room_image)
+    Call<AllImageModel>get_room_image(
+            @Field("room_id") String room_id
+    );
+
+    @FormUrlEncoded
+    @POST(delete_room_details)
+    Call<ResponseBody>delete_room_details(
+            @Field("room_id") String room_id
+    );
+
+
+    @FormUrlEncoded
+    @POST(get_conversation_detail)
+    Call<ChatConversation>get_conversation_detail(
+            @Field("receiver_id") String receiver_id
+    );
+
+    @FormUrlEncoded
+    @POST(get_chat)
+    Call<GetChat>get_chat(
+            @Field("sender_id") String sender_id,
+            @Field("receiver_id") String receiver_id
+    );
+
+    @FormUrlEncoded
+    @POST(insert_chat)
+    Call<ResponseBody>insert_chat(
+            @Field("sender_id") String sender_id,
+            @Field("receiver_id") String receiver_id,
+            @Field("chat_message") String chat_message
     );
 
 }

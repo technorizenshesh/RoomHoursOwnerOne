@@ -52,7 +52,7 @@
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="LOG IN"
+                android:text="@string/log_in"
                 android:textColor="@color/white"
                 android:textSize="@dimen/padding35"/>
 
@@ -65,7 +65,7 @@
                 android:layout_marginTop="@dimen/padding5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PARA CONTINUAR"
+                android:text="@string/para_continuar"
                 android:textColor="@color/white"
                 android:textSize="@dimen/padding18"/>
 
@@ -79,7 +79,7 @@
 
 
                 <EditText
-                    android:text="harshit9@gmail.com"
+                    android:text="demo10@gmail.com"
                     android:padding="@dimen/padding10"
                     android:maxLength="30"
                     android:singleLine="true"
@@ -87,7 +87,7 @@
                     android:id="@+id/edt_email"
                     android:textSize="@dimen/padding18"
                     android:background="@null"
-                    android:hint="Email Address / Mobile Number "
+                    android:hint="@string/email_address_mobile_number"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     >
@@ -104,7 +104,7 @@
                 android:layout_height="55dp">
 
                 <EditText
-                    android:text="123456"
+                    android:text="12345"
                     android:padding="@dimen/padding10"
                     android:maxLength="30"
                     android:singleLine="true"
@@ -131,7 +131,7 @@
                 android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Forgot Password ?"
+                android:text="@string/forgot_password"
                 />
 
             <RelativeLayout
@@ -167,7 +167,7 @@
                         android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Get Started"
+                        android:text="@string/get_started"
                         />
 
                 </RelativeLayout>
@@ -203,7 +203,7 @@
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Log in with Facebook"
+                    android:text="@string/continue_with_facebook"
                     />
 
             </RelativeLayout>
@@ -216,7 +216,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_width="match_parent"
                 android:background="@drawable/roundbttn_black"
-                android:layout_height="55dp">
+                android:layout_height="55dp"
+                >
 
                 <ImageView
                     android:tint="@color/white"
@@ -236,7 +237,7 @@
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Log in with Google"
+                    android:text="@string/continue_with_google"
                     />
 
             </RelativeLayout>
@@ -261,7 +262,7 @@
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Don't have an account ? "
+            android:text="@string/don_t_have_an_account"
             />
 
         <TextView
@@ -274,7 +275,7 @@
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign UP"
+            android:text="@string/sign_up"
             />
 
     </RelativeLayout>

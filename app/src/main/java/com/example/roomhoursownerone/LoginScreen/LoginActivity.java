@@ -30,6 +30,7 @@ import com.example.roomhoursownerone.AddPhoto.AddPhoto;
 import com.example.roomhoursownerone.BankAccountDetails.BankAccountDetails;
 import com.example.roomhoursownerone.CurrentLocation.CurrentLocation;
 import com.example.roomhoursownerone.GPSTracker;
+import com.example.roomhoursownerone.HomeScreen.HomeActivity;
 import com.example.roomhoursownerone.Preference;
 import com.example.roomhoursownerone.R;
 import com.example.roomhoursownerone.SignUpScreen.SignUpActivity;
@@ -55,6 +56,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -97,6 +99,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     GPSTracker gpsTracker;
     String latitude ="0.0";
     String longitude ="0.0";
+    String token="";
+    String result="";
+    String Result ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +123,20 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         } catch (Exception e){
             e.printStackTrace();
         }
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        // Get new FCM registration token
+                        token = task.getResult();
+                        Log.e("token",token);
+                    }
+                });
 
         gpsTracker=new GPSTracker(this);
 
@@ -228,13 +247,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                             startActivity(intent);
                             finishAffinity();
 
-                            Toast.makeText(LoginActivity.this, "Success"+task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, getString(R.string.success)+task.getException(), Toast.LENGTH_SHORT).show();
 
                           /*  if (sessionManager.isNetworkAvailable()) {
 
                                 progressBar.setVisibility(View.VISIBLE);
 
-                                SocialLoginMethod(UsernAME,email,"123456789",SocialId);
+                                  SocialLoginMethod(UsernAME,"123456",email,"fghgh",SocialId);
 
                             }else {
 
@@ -290,13 +309,24 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             startActivity(intent);
             finishAffinity();
 
-            Toast.makeText( this, "Login successful", Toast.LENGTH_SHORT ).show();
+            if (sessionManager.isNetworkAvailable()) {
+
+                progressBar.setVisibility(View.VISIBLE);
+
+                SocialLoginMethod(UsernAME,"123456",email,"fghgh",SocialId);
+
+            }else {
+
+                Toast.makeText(LoginActivity.this, R.string.checkInternet, Toast.LENGTH_SHORT).show();
+            }
+
+
+            Toast.makeText( this, getString(R.string.login_success), Toast.LENGTH_SHORT ).show();
 
 
         } else {
 
-            Toast.makeText( this, "Login Unsuccessful", Toast.LENGTH_SHORT ).show();
-
+            Toast.makeText( this, getString(R.string.login_unsucces), Toast.LENGTH_SHORT ).show();
         }
     }
 
@@ -330,6 +360,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             public void onClick(View v) {
 
                 validation();
+
             }
         });
 
@@ -342,12 +373,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         if(!isValidEmail(email))
         {
-            Toast.makeText(this, "Please Enter email.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.enter_email), Toast.LENGTH_SHORT).show();
 
 
         }else if(password.equalsIgnoreCase(""))
         {
-            Toast.makeText(this, "Please Enter password.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.enter_password), Toast.LENGTH_SHORT).show();
 
         }else
         {
@@ -375,21 +406,23 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         Call<ResponseBody> call = RetrofitClients
                 .getInstance()
                 .getApi()
-                .loginApi(email,password,android_id,"42","3242","Owner");
+                .loginApi(email,password,token,latitude,longitude,"Owner");
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
-
+                    RR_login.setEnabled(true);
                     JSONObject jsonObject = new JSONObject(response.body().string());
                     String status = jsonObject.getString("status");
                     String message = jsonObject.getString("message");
+                     Result = jsonObject.getString("result");
 
                     JSONObject resultOne = jsonObject.getJSONObject("result");
 
                     //  String USerName = resultOne.getString("name");
 
                     String UserId = resultOne.getString("id");
+                    String check_status = resultOne.getString("check_status");
 
                     if (status.equalsIgnoreCase("1")){
                         //String userId = jsonObject.getString("user_id");
@@ -397,80 +430,122 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         Preference.save(LoginActivity.this,Preference.KEY_USER_ID,UserId);
 
                         progressBar.setVisibility(View.GONE);
-                     //   Intent intent = new Intent(LoginActivity.this, AddPhoto.class);
-                       // Intent intent = new Intent(LoginActivity.this, CurrentLocation.class);
-                        Intent intent = new Intent(LoginActivity.this, CurrentLocation.class);
-                        intent.putExtra("Community","");
-                        intent.putExtra("City","");
-                        intent.putExtra("Street","");
-                        intent.putExtra("ZipCode","");
-                        intent.putExtra("lat",latitude);
-                        intent.putExtra("lon",longitude);
-                        startActivity(intent);
-                        finishAffinity();
 
+                        if(check_status.equalsIgnoreCase("1"))
+                        {
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finish();
+
+                        }else {
+
+                            Intent intent = new Intent(LoginActivity.this, CurrentLocation.class);
+                            intent.putExtra("Community","");
+                            intent.putExtra("City","");
+                            intent.putExtra("Street","");
+                            intent.putExtra("ZipCode","");
+                            intent.putExtra("lat",latitude);
+                            intent.putExtra("lon",longitude);
+                            startActivity(intent);
+                            finish();
+
+                        }
                     }else {
                         progressBar.setVisibility(View.GONE);
-                        // btn_login.setEnabled(true);
+
                         Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
+                    Toast.makeText(LoginActivity.this, ""+Result, Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
 
                 } catch (IOException e) {
-
+                    Toast.makeText(LoginActivity.this, ""+Result, Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
 
                 }finally {
                     progressBar.setVisibility(View.GONE);
-                    //  btn_login.setEnabled(true);
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 progressBar.setVisibility(View.GONE);
-                // btn_login.setEnabled(true);
-                Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+                RR_login.setEnabled(true);
+                Toast.makeText(LoginActivity.this, "Please Check Network", Toast.LENGTH_SHORT).show();
+
             }
         });
 
     }
 
 
-    private void callLoginApiSocial() {
+    private void SocialLoginMethod(String FirstName,String Password,String email,String register_id,String socialId) {
 
         Call<ResponseBody> call = RetrofitClients
                 .getInstance()
                 .getApi()
-                .SocialloginApi("harshit","harshit90@gmail.com","dsfjdsafgdhasfvcfsghja%20chjf","gdfgdgdfg","22.45454","75.565656");
+                .SocialloginApi(FirstName,email,token,socialId,latitude,longitude);
+
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                progressBar.setVisibility(View.GONE);
                 try {
-
+                    RR_google_login.setEnabled(true);
+                    RR_faceBook_login.setEnabled(true);
                     JSONObject jsonObject = new JSONObject(response.body().string());
                     String status = jsonObject.getString("status");
                     String message = jsonObject.getString("message");
+                    result = jsonObject.getString("result");
+
+                    JSONObject resultOne = jsonObject.getJSONObject("result");
+
+                    String UserId = resultOne.getString("id");
+                    String check_status = resultOne.getString("check_status");
 
                     if (status.equalsIgnoreCase("1")){
 
-                        Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+                        Preference.save(LoginActivity.this,Preference.KEY_USER_ID,UserId);
 
-                        Intent intent = new Intent(LoginActivity.this, AddPhoto.class);
-                        startActivity(intent);
-                        finishAffinity();
+                        if(check_status.equalsIgnoreCase("1"))
+                        {
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finishAffinity();
+
+                        }else {
+
+                            Intent intent = new Intent(LoginActivity.this, CurrentLocation.class);
+                            intent.putExtra("Community","");
+                            intent.putExtra("City","");
+                            intent.putExtra("Street","");
+                            intent.putExtra("ZipCode","");
+                            intent.putExtra("lat",latitude);
+                            intent.putExtra("lon",longitude);
+                            startActivity(intent);
+                            finishAffinity();
+                        }
+
                     }else {
-                        progressBar.setVisibility(View.GONE);
-                        // btn_login.setEnabled(true);
-                        Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
+
+                        RR_google_login.setEnabled(true);
+                        RR_faceBook_login.setEnabled(true);
+                        Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
+                    Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
+                    RR_google_login.setEnabled(true);
+                    RR_faceBook_login.setEnabled(true);
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    RR_google_login.setEnabled(true);
+                    RR_faceBook_login.setEnabled(true);
+
                 }finally {
-                    progressBar.setVisibility(View.GONE);
+                    // Toast.makeText(LoginActivity.this, result, Toast.LENGTH_SHORT).show();
+                    RR_google_login.setEnabled(true);
+                    RR_faceBook_login.setEnabled(true);
                     //  btn_login.setEnabled(true);
                 }
             }
@@ -479,6 +554,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 progressBar.setVisibility(View.GONE);
                 // btn_login.setEnabled(true);
+                RR_google_login.setEnabled(true);
+                RR_faceBook_login.setEnabled(true);
                 Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

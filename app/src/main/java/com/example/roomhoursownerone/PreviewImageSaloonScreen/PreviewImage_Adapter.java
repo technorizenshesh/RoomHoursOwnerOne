@@ -69,6 +69,16 @@ public class PreviewImage_Adapter extends RecyclerView.Adapter<RecyclerView.View
 
            genericViewHolder.img_add.setImageBitmap(modelList.get(position));
 
+           if(position == 0)
+           {
+               genericViewHolder.txt_main_picture.setVisibility(View.VISIBLE);
+
+           }else
+           {
+               genericViewHolder.txt_main_picture.setVisibility(View.INVISIBLE);
+           }
+
+
         }
     }
 
@@ -96,11 +106,13 @@ public class PreviewImage_Adapter extends RecyclerView.Adapter<RecyclerView.View
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView img_add;
+        private TextView txt_main_picture;
 
         public ViewHolder(final View itemView) {
             super(itemView);
 
            this.img_add = itemView.findViewById(R.id.img_add);
+           this.txt_main_picture = itemView.findViewById(R.id.txt_main_picture);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

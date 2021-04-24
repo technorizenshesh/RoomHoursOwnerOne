@@ -1,8 +1,11 @@
 package com.example.roomhoursownerone.Pricelist;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -10,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.roomhoursownerone.CalenderScreen.CalenderActivityTwo;
 import com.example.roomhoursownerone.R;
@@ -78,6 +82,15 @@ public class PriceListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_price_list);
 
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                  window.setStatusBarColor(ContextCompat.getColor(
+                            this, R.color.mehroon));
+        }
+
+
         RR_terms=findViewById(R.id.RR_terms);
 
         edt_one=findViewById(R.id.edt_one);
@@ -110,8 +123,7 @@ public class PriceListActivity extends AppCompatActivity {
         edt_five_recommed.setEnabled(false);
         edt_six_recommed.setEnabled(false);
 
-
-        Intent intent=getIntent();
+ Intent intent=getIntent();
         if(intent !=null)
         {
             City = intent.getStringExtra("City").toString();
@@ -128,7 +140,6 @@ public class PriceListActivity extends AppCompatActivity {
             latitude = intent.getStringExtra("lon").toString();
 
         }
-
 
 
         RR_recommend.setOnClickListener(new View.OnClickListener() {
@@ -233,28 +244,28 @@ public class PriceListActivity extends AppCompatActivity {
 
                 if(oneHour_price.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(PriceListActivity.this, "Please Enter One Hour Price", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PriceListActivity.this, getString(R.string.enter_price), Toast.LENGTH_SHORT).show();
 
                 }else if(twoHour_price.equalsIgnoreCase("") || twoHr<onehr)
                 {
-                    Toast.makeText(PriceListActivity.this, "X1 hour prices must be higher than X-2 hours.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PriceListActivity.this, getString(R.string.x1), Toast.LENGTH_SHORT).show();
 
                 }else if(threeHour_price.equalsIgnoreCase("") || threeHr<twoHr)
                 {
-                    Toast.makeText(PriceListActivity.this, "X2 hour prices must be higher than X-3 hours.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PriceListActivity.this, getString(R.string.x2), Toast.LENGTH_SHORT).show();
 
                 }else if(fourHour_price.equalsIgnoreCase("") || fourHr<threeHr)
                 {
-                    Toast.makeText(PriceListActivity.this, "X3 hour prices must be higher than X-4 hours.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PriceListActivity.this, getString(R.string.x3), Toast.LENGTH_SHORT).show();
 
                 }else if(night_price.equalsIgnoreCase("")|| fiveHr<fourHr)
                 {
 
-                    Toast.makeText(PriceListActivity.this, "X4 hour prices must be higher than X-5 hours.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PriceListActivity.this, getString(R.string.x4), Toast.LENGTH_SHORT).show();
 
                 }else if(weekend_price.equalsIgnoreCase("")|| SixHr<fiveHr)
                 {
-                    Toast.makeText(PriceListActivity.this, "X5 hour prices must be higher than X-6 hours.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PriceListActivity.this, getString(R.string.x5), Toast.LENGTH_SHORT).show();
 
                 }else
                 {
@@ -282,7 +293,7 @@ public class PriceListActivity extends AppCompatActivity {
                     intent.putExtra("lon",longitude);
 
                     startActivity(intent);
-
+                    finish();
                 }
 
                 /*Intent intent = new Intent(PriceListActivity.this, CalenderActivityOne.class);

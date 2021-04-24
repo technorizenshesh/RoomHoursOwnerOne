@@ -1,14 +1,18 @@
 package com.example.roomhoursownerone.BankAccountDetails;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.roomhoursownerone.AddPhoto.AddPhoto;
 import com.example.roomhoursownerone.Done.DoneActivity;
@@ -54,6 +58,15 @@ public class BankAccountDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank_account_details);
 
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(ContextCompat.getColor(
+                    this, R.color.mehroon));
+        }
+
+
         RR_next_bank_detaols=findViewById(R.id.RR_next_bank_detaols);
         edt_bak_holderName=findViewById(R.id.edt_bak_holderName);
         edt_bankName=findViewById(R.id.edt_bankName);
@@ -78,23 +91,23 @@ public class BankAccountDetails extends AppCompatActivity {
 
                 if(BankHolderName.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(BankAccountDetails.this, "Please Enter Bank Holder Name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BankAccountDetails.this, getString(R.string.holder_name), Toast.LENGTH_SHORT).show();
 
                 }else if(BankName.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(BankAccountDetails.this, "Please Enter Bank Name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BankAccountDetails.this, getString(R.string.bank_name_new), Toast.LENGTH_SHORT).show();
 
                 }else if(Banck_Ac.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(BankAccountDetails.this, "Please Enter Bank Account Number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BankAccountDetails.this, getString(R.string.enter_mbl_number), Toast.LENGTH_SHORT).show();
 
                 }else if(ban_Code.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(BankAccountDetails.this, "Please Enter Code", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BankAccountDetails.this, getString(R.string.enter_code_ple), Toast.LENGTH_SHORT).show();
 
                 }else if(Area.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(BankAccountDetails.this, "Please Enter Area", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BankAccountDetails.this, getString(R.string.area), Toast.LENGTH_SHORT).show();
 
                 }else
                 {

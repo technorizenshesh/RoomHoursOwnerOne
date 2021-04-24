@@ -22,7 +22,9 @@
         android:indeterminateTint="@color/colorPrimary"
         android:visibility="gone"/>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
+        android:paddingBottom="@dimen/padding20"
+        android:layout_above="@+id/RR_login_all"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -40,7 +42,7 @@
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SIGN UP"
+                android:text="@string/sign_up_one"
                 android:textColor="@color/white"
                 android:textSize="@dimen/padding35"/>
 
@@ -54,7 +56,7 @@
                 android:layout_marginTop="@dimen/padding5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PARA CONTINUAR"
+                android:text="@string/para_continuar"
                 android:textColor="@color/white"
                 android:textSize="@dimen/padding18"/>
 
@@ -223,14 +225,26 @@
                         android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="SIGN UP"
+                        android:text="@string/sign_up"
                         />
 
                 </RelativeLayout>
 
             </RelativeLayout>
 
+            <com.facebook.login.widget.LoginButton
+                android:visibility="gone"
+                android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:text="  connect_with_facebook"
+                />
+
+
             <RelativeLayout
+                android:id="@+id/RR_faceBook_login"
                 android:layout_marginTop="@dimen/padding20"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
@@ -262,6 +276,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/RR_google_login"
                 android:layout_marginTop="@dimen/padding20"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
@@ -270,11 +285,12 @@
                 android:layout_height="55dp">
 
                 <ImageView
+                    android:tint="@color/white"
                     android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/google_plus"
+                    android:layout_width="@dimen/padding40"
+                    android:layout_height="@dimen/padding40"
+                    android:src="@drawable/google_new"
                     >
                 </ImageView>
 
@@ -293,9 +309,10 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
+        android:id="@+id/RR_login_all"
         android:layout_margin="@dimen/padding20"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
@@ -310,7 +327,7 @@
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account ? "
+            android:text="@string/already_have_an_account"
             />
 
         <TextView
@@ -323,7 +340,7 @@
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
+            android:text="@string/login"
             />
 
     </RelativeLayout>

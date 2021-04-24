@@ -21,6 +21,8 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -69,13 +71,22 @@ public class MapsActivity  extends AppCompatActivity
 
     Location location;
 
-    double lat =0.0;
-    double lng =0.0;
+    double lat1 =0.0;
+    double lon1=0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(ContextCompat.getColor(
+                    this, R.color.mehroon));
+        }
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         RR_Next=findViewById(R.id.RR_Next);
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -87,13 +98,10 @@ public class MapsActivity  extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                 lat = location.getLatitude();
-                 lng = location.getLongitude();
-
                 geocoder = new Geocoder(MapsActivity.this, Locale.getDefault());
 
                 try {
-                    addresses = geocoder.getFromLocation(lat, lng, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+                    addresses = geocoder.getFromLocation(lat1, lon1, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -192,6 +200,9 @@ public class MapsActivity  extends AppCompatActivity
                 mGoogleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
                     @Override
                     public void onMapClick(LatLng point) {
+
+                        lat1 = point.latitude;
+                        lon1 = point.longitude;
 
                         latLng = new LatLng(location.getLatitude(), location.getLongitude());
                         MarkerOptions markerOptions = new MarkerOptions();

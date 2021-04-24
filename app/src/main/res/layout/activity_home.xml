@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayLight"
+    tools:context=".HomeScreen.HomeActivity">
+
+    <FrameLayout
+        android:layout_above="@+id/RR_btm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_homeContainer"
+        />
+
+
+    <RelativeLayout
+        android:background="@drawable/background_home_gray"
+        android:id="@+id/RR_btm"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padding20"
+            android:layout_marginLeft="@dimen/padding20"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:id="@+id/RR_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding50">
+
+
+            <RelativeLayout
+                android:id="@+id/RR_Home"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/img_home"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/home"
+                    android:layout_width="@dimen/padding35"
+                    android:layout_height="@dimen/padding35" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/RR_fav"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/img_fav"
+                    android:layout_width="@dimen/padding35"
+                    android:layout_height="@dimen/padding35"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/fav_one" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/RR_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_map"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/map_one"
+                    android:layout_width="@dimen/padding35"
+                    android:layout_height="@dimen/padding35" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RR_chat"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/img_chat"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/chat_one"
+                    android:layout_width="@dimen/padding35"
+                    android:layout_height="@dimen/padding35" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RR_profile"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/img_profile"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/profile_new_icon"
+                    android:layout_width="@dimen/padding35"
+                    android:layout_height="@dimen/padding35" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

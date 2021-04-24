@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginScreen.LoginActivity"
+    android:background="@color/grayLight"
+    android:padding="@dimen/padding15">
+
+    <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:background="@drawable/progresh_background"
+        android:elevation="@dimen/padding6"
+        android:padding="@dimen/padding5"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/colorPrimary"
+        android:visibility="gone"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                    android:id="@+id/RR_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    >
+
+                    <ImageView
+                        android:layout_centerVertical="true"
+                        android:id="@+id/img_room"
+                        android:src="@drawable/logo_n"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        >
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/txt_name"
+                        android:layout_toRightOf="@+id/img_room"
+                        android:layout_marginLeft="@dimen/padding20"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ffff"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/pading24"/>
+
+                    <TextView
+                        android:id="@+id/txt_email"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_below="@+id/txt_name"
+                        android:layout_toRightOf="@+id/img_room"
+                        android:layout_marginLeft="@dimen/padding20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/padding16"/>
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_logout"
+                    android:layout_marginTop="@dimen/padding20"
+                    android:layout_below="@+id/RR_name"
+                    android:layout_centerHorizontal="true"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/log_out"
+                    android:textColor="@color/mehroon"
+                    android:textSize="@dimen/padding25"/>
+
+                <TextView
+                    android:id="@+id/txt_general"
+                    android:layout_marginTop="@dimen/padding20"
+                    android:layout_below="@+id/txt_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general"
+                    android:textSize="@dimen/padding22"/>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_below="@+id/txt_general"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/RR_Add_newRoom"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_white"
+                        android:layout_height="60dp">
+
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/black"
+                            android:text="@string/add_new_rooms"
+                            android:textSize="@dimen/padding20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+                        </TextView>
+
+                        <ImageView
+                            android:layout_marginRight="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/back_arrow"
+                            android:layout_width="@dimen/padding35"
+                            android:layout_height="@dimen/padding35"
+                            >
+
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/RR_chnagePassword"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_white"
+                        android:layout_height="60dp">
+
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/black"
+                            android:text="@string/change_password"
+                            android:textSize="@dimen/padding20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+                        </TextView>
+
+                        <ImageView
+                            android:layout_marginRight="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/back_arrow"
+                            android:layout_width="@dimen/padding35"
+                            android:layout_height="@dimen/padding35"
+                            >
+
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/RR_bank_details"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_white"
+                        android:layout_height="60dp">
+
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/black"
+                            android:text="@string/bank_account_details"
+                            android:textSize="@dimen/padding20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+                        </TextView>
+
+                        <ImageView
+                            android:layout_marginRight="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/back_arrow"
+                            android:layout_width="@dimen/padding35"
+                            android:layout_height="@dimen/padding35"
+                            >
+
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/RR_slectet_language"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_white"
+                        android:layout_height="60dp">
+
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/black"
+                            android:text="@string/change_language"
+                            android:textSize="@dimen/padding20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+                        </TextView>
+
+                        <ImageView
+                            android:layout_marginRight="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/back_arrow"
+                            android:layout_width="@dimen/padding35"
+                            android:layout_height="@dimen/padding35"
+                            >
+
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/roundbttn_white"
+                        android:layout_height="60dp">
+
+
+                        <TextView
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/black"
+                            android:text="@string/withdraw_money"
+                            android:textSize="@dimen/padding20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+                        </TextView>
+
+                        <ImageView
+                            android:layout_marginRight="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/back_arrow"
+                            android:layout_width="@dimen/padding35"
+                            android:layout_height="@dimen/padding35"
+                            >
+
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_below="@+id/txt_logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notification"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/padding20"/>
+
+                    <Switch
+                        android:layout_marginRight="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding20"
+                        android:textSize="@dimen/padding20"
+                        android:checked="true"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:text="@string/allow_push_notification"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                    </Switch>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "17649340062-2l737d6jopbr2bnilcmpvrlel6ioa88v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.roomhoursownerone",
+            "certificate_hash": "e76fd6813e32f41ae84f88740c30767c05f9ef2a"
+          }
+        },
+        {
           "client_id": "17649340062-nn827qnga0k893ouq5d3uu6khagsf41g.apps.googleusercontent.com",
           "client_type": 3
         }

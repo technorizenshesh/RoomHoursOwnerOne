@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/grayLight"
     >
 
 
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Country"
+                    android:text="@string/country"
                     android:textSize="@dimen/padding18"
                     />
 
@@ -101,7 +101,7 @@
                     android:padding="@dimen/padding10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Autonomous Community"
+                    android:text="@string/autonomous_community"
                     android:textSize="@dimen/padding18"
                     />
 
@@ -138,7 +138,7 @@
                     android:padding="@dimen/padding10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="City"
+                    android:text="@string/city"
                     android:textSize="@dimen/padding18"
                     />
 
@@ -173,7 +173,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="Street,number,floor"
+                    android:text="@string/street_number_floor"
                     android:textSize="@dimen/padding18"
                     />
 
@@ -210,7 +210,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="ZipCode"
+                    android:text="@string/zipcode"
                     android:textSize="@dimen/padding18"
                     />
 
@@ -274,7 +274,7 @@
                             android:textColor="@color/white"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Use Current Location"
+                            android:text="@string/use_current_location"
                             />
 
                     </RelativeLayout>
@@ -315,7 +315,7 @@
                             android:textColor="@color/white"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Next"
+                            android:text="@string/next"
                             />
 
                     </RelativeLayout>

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#F1F2FA"
+    android:background="@color/grayLight"
     android:layout_height="match_parent"
     >
 
@@ -37,7 +37,7 @@
                         android:textSize="@dimen/padding22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Price Options (Single checkbox - just 1 option must be clickable as a checkbox)" />
+                        android:text="@string/price_options_single_checkbox_just_1_option_must_be_clickable_as_a_checkbox" />
 
 
                     <RelativeLayout
@@ -75,7 +75,7 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Recommend Price  500.00 €  the prices are narked with values showed in the example.this option is marked by default" />
+                                android:text="@string/recommend_price_500_00_the_prices_are_narked_with_values_showed_in_the_example_this_option_is_marked_by_default" />
 
                         </RelativeLayout>
 
@@ -116,7 +116,7 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Customized Price  $500.00  the costumer is free to insert the prices he wants" />
+                                android:text="@string/customized_price_500_00_the_costumer_is_free_to_insert_the_prices_he_wants" />
 
                         </RelativeLayout>
 
@@ -139,7 +139,7 @@
                             android:textSize="@dimen/padding18"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="The Rooms Prices must follow this Price Structure" />
+                            android:text="@string/the_rooms_prices_must_follow_this_price_structure"/>
 
                         <RelativeLayout
                             android:orientation="horizontal"
@@ -158,7 +158,7 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price 1 Hour" />
+                                android:text="@string/price_1_hour"  />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
@@ -217,7 +217,7 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price 2 Hour" />
+                                android:text="@string/price_2_hour" />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
@@ -275,7 +275,7 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price 3 Hour" />
+                                android:text="@string/price_3_hour" />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
@@ -332,7 +332,7 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price 4 - 6 Hour" />
+                                android:text="@string/price_4_6_hour" />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
@@ -392,7 +392,7 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price for night*" />
+                                android:text="@string/price_for_night" />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
@@ -449,7 +449,8 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="weekend night price* "/>
+                                android:text="@string/weekend_night_price"
+                                />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
@@ -508,10 +509,11 @@
                             android:layout_marginLeft="@dimen/padding15"
                             android:layout_marginRight="@dimen/padding15"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/padding18"
+                            android:textSize="@dimen/padding16"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="The Rooms Prices must follow this Price Structure" />
+                            android:text="@string/the_rooms_prices_must_follow_this_price_structure"
+                            />
 
                         <RelativeLayout
                             android:orientation="horizontal"
@@ -527,17 +529,19 @@
                                 android:paddingLeft="@dimen/padding10"
                                 android:layout_centerVertical="true"
                                 android:singleLine="true"
+                                android:textColor="@color/black"
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price 1 Hour" />
+                                android:text="@string/price_1_hour"
+                                />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
                                 android:layout_alignParentRight="true"
                                 android:background="@drawable/roundbttn_gray"
                                 android:layout_width="150dp"
-                                android:layout_height="60dp">
+                                android:layout_height="@dimen/_50sdp">
 
                                 <EditText
                                     android:layout_toLeftOf="@+id/txt_euro"
@@ -583,20 +587,21 @@
                             >
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:paddingLeft="@dimen/padding10"
                                 android:layout_centerVertical="true"
                                 android:singleLine="true"
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price 2 Hour" />
+                                android:text="@string/price_2_hour" />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
                                 android:layout_alignParentRight="true"
                                 android:background="@drawable/roundbttn_gray"
                                 android:layout_width="150dp"
-                                android:layout_height="60dp">
+                                android:layout_height="@dimen/_50sdp">
 
                                 <EditText
                                     android:id="@+id/edt_two"
@@ -637,25 +642,24 @@
                             android:layout_marginLeft="@dimen/padding15"
                             android:layout_marginRight="@dimen/padding15"
                             android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:layout_toLeftOf="@+id/RR_filter"
-                            >
+                            android:layout_height="60dp">
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:paddingLeft="@dimen/padding10"
                                 android:layout_centerVertical="true"
                                 android:singleLine="true"
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price 3 Hour" />
+                                android:text="@string/price_3_hour" />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
                                 android:layout_alignParentRight="true"
                                 android:background="@drawable/roundbttn_gray"
                                 android:layout_width="150dp"
-                                android:layout_height="60dp">
+                                android:layout_height="@dimen/_50sdp">
 
                                 <EditText
                                     android:layout_toLeftOf="@+id/txt_euro3"
@@ -702,20 +706,21 @@
                             >
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:paddingLeft="@dimen/padding10"
                                 android:layout_centerVertical="true"
                                 android:singleLine="true"
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price 4 - 6 Hour" />
+                                android:text="@string/price_4_6_hour" />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
                                 android:layout_alignParentRight="true"
                                 android:background="@drawable/roundbttn_gray"
                                 android:layout_width="150dp"
-                                android:layout_height="60dp">
+                                android:layout_height="@dimen/_50sdp">
 
                                 <EditText
                                     android:layout_toLeftOf="@+id/txt_euro4"
@@ -763,20 +768,21 @@
                             >
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:paddingLeft="@dimen/padding10"
                                 android:layout_centerVertical="true"
                                 android:singleLine="true"
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Price for night*" />
+                                android:text="@string/price_for_night" />
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
                                 android:layout_alignParentRight="true"
                                 android:background="@drawable/roundbttn_gray"
                                 android:layout_width="150dp"
-                                android:layout_height="60dp">
+                                android:layout_height="@dimen/_50sdp">
 
                                 <EditText
                                     android:layout_toLeftOf="@+id/txt_euro5"
@@ -823,20 +829,21 @@
                             >
 
                             <TextView
+                                android:textColor="@color/black"
                                 android:paddingLeft="@dimen/padding10"
                                 android:layout_centerVertical="true"
                                 android:singleLine="true"
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="weekend night price* "/>
+                                android:text="@string/weekend_night_price"/>
 
                             <RelativeLayout
                                 android:layout_centerVertical="true"
                                 android:layout_alignParentRight="true"
                                 android:background="@drawable/roundbttn_gray"
                                 android:layout_width="150dp"
-                                android:layout_height="60dp">
+                                android:layout_height="@dimen/_50sdp">
 
                                 <EditText
                                     android:layout_toLeftOf="@+id/txt_euro6"
@@ -877,6 +884,7 @@
 
 
                     <TextView
+                        android:visibility="gone"
                         android:textStyle="bold"
                         android:layout_marginTop="@dimen/padding20"
                         android:layout_marginLeft="@dimen/padding15"
@@ -885,7 +893,20 @@
                         android:textSize="@dimen/padding18"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add the following Disclaim : Night Prices goes From 8pm to 11am the next day" />
+                        android:text="@string/add_the_following_disclaim_night_prices_goes_from_8pm_to_11am_the_next_day" />
+
+
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding15"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:textSize="@dimen/padding18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/prices_night_comprendre_from_15_00_to_12_00_the_next_day"
+                        />
 
 
 
@@ -895,15 +916,14 @@
                         android:layout_marginLeft="@dimen/padding15"
                         android:layout_marginRight="@dimen/padding15"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/padding18"
+                        android:textSize="@dimen/_16sdp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="**Prices Night Comprendre from 15:00 to 12:00 the next day" />
-
+                        android:text="@string/dis" />
 
 
                     <TextView
-                        android:textStyle="bold"
+                        android:visibility="gone"
                         android:layout_marginTop="@dimen/padding20"
                         android:layout_marginLeft="@dimen/padding15"
                         android:layout_marginRight="@dimen/padding15"
@@ -911,18 +931,7 @@
                         android:textSize="@dimen/padding18"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Add the folloing Diclaim : night prices goes from 8Pm to 11am" />
-
-
-                    <TextView
-                        android:layout_marginTop="@dimen/padding20"
-                        android:layout_marginLeft="@dimen/padding15"
-                        android:layout_marginRight="@dimen/padding15"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/padding18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Options CheckBox (By clciking the box the Host Accepts to offer a 30% Discount when the Host is just one person)" />
+                        android:text="@string/options_checkbox_by_clciking_the_box_the_host_accepts_to_offer_a_30_discount_when_the_host_is_just_one_person" />
 
 
                     <RelativeLayout
@@ -960,7 +969,7 @@
                                 android:textSize="@dimen/padding18"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="I want to offer a 30 % discount if one person comes alone" />
+                                android:text="@string/i_want_to_offer_a_30_discount_if_one_person_comes_alone" />
 
                         </RelativeLayout>
 
@@ -1001,7 +1010,7 @@
                                 android:textColor="@color/white"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Next"
+                                android:text="@string/next"
                                 />
 
                         </RelativeLayout>

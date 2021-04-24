@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#F1F2FA"
+    android:background="@color/grayLight"
     android:layout_height="match_parent"
     >
 
@@ -49,7 +49,7 @@
                         android:textSize="@dimen/padding18"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bank Account Details " />
+                        android:text="@string/bank_account_details" />
 
 
                     <EditText
@@ -61,7 +61,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginTop="@dimen/padding10"
                         android:background="@drawable/roundbttn_gray"
-                        android:hint="Account Holder Name"
+                        android:hint="@string/account_holder_name"
                         android:paddingLeft="@dimen/padding20"
                         android:singleLine="true"
                         android:textSize="@dimen/padding20">
@@ -75,7 +75,7 @@
                         android:layout_marginTop="@dimen/padding10"
                         android:textSize="@dimen/padding20"
                         android:singleLine="true"
-                        android:hint="Bank Name"
+                        android:hint="@string/bank_name"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:background="@drawable/roundbttn_gray"
@@ -92,7 +92,7 @@
                         android:layout_marginTop="@dimen/padding10"
                         android:textSize="@dimen/padding20"
                         android:singleLine="true"
-                        android:hint="Bank Account Name"
+                        android:hint="@string/bank_account_name"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:background="@drawable/roundbttn_gray"
@@ -109,7 +109,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/padding20"
                         android:singleLine="true"
-                        android:hint="Bank Code"
+                        android:hint="@string/bank_code"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:background="@drawable/roundbttn_gray"
@@ -126,7 +126,7 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/padding20"
                         android:singleLine="true"
-                        android:hint="Area Code"
+                        android:hint="@string/area_code"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:background="@drawable/roundbttn_gray"
@@ -169,7 +169,7 @@
                                 android:textColor="@color/white"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Next"
+                                android:text="@string/next"
                                 />
 
                         </RelativeLayout>

@@ -26,11 +26,13 @@
     <color name="orange">#F5D878</color>
     <color name="dimgray">#BE696969</color>
     <color name="dividerDark">#999999</color>
-
+    <color name="colorGray">#727272</color>
+    <color name="color_txtBlue">#05346d</color>
     <color name="colorAccentBlue">#03a9f4</color>
     <color name="colorAccentGrey">#999999</color>
     <color name="colorAccentGreen">#557f5f</color>
-
+    <color name="chat_boxbg">#f3f2f2</color>
+    <color name="colorGreen">#257712</color>
     <color name="colorAccentRed">#ff0000</color>
     <color name="textColorPrimaryLight">#1C1C1C</color>
     <color name="textColorSecondary">#404040</color>

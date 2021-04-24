@@ -1,11 +1,15 @@
 package com.example.roomhoursownerone.HouseOption;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.roomhoursownerone.Pricelist.PriceListActivity;
 import com.example.roomhoursownerone.R;
@@ -17,18 +21,22 @@ public class HouseOption extends AppCompatActivity {
     private RelativeLayout RR_bath;
     private RelativeLayout RR_air_condition;
     private RelativeLayout RR_heating;
+    private RelativeLayout RR_Wifi;
 
     private ImageView img_one;
     private ImageView img_two;
     private ImageView img_three;
+    private ImageView img_four;
 
     boolean bath = false;
     boolean air = false;
     boolean heating = false;
+    boolean wifi = false;
 
     String PrivateBath ="false";
     String airCondition ="false";
     String heating_one ="true";
+    String wifi_one ="true";
     String  City="";
     String  Community="";
     String  Country="";
@@ -44,13 +52,24 @@ public class HouseOption extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house_option);
 
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(ContextCompat.getColor(
+                    this, R.color.mehroon));
+        }
+
+
         RR_next_house=findViewById(R.id.RR_next_house);
         RR_bath=findViewById(R.id.RR_bath);
         RR_air_condition=findViewById(R.id.RR_air_condition);
         RR_heating=findViewById(R.id.RR_heating);
+        RR_Wifi=findViewById(R.id.RR_Wifi);
         img_one=findViewById(R.id.img_one);
         img_two=findViewById(R.id.img_two);
         img_three=findViewById(R.id.img_three);
+        img_four=findViewById(R.id.img_four);
 
         Intent intent=getIntent();
         if(intent !=null)
@@ -122,6 +141,25 @@ public class HouseOption extends AppCompatActivity {
             }
         });
 
+        RR_Wifi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(wifi)
+                {
+                    wifi_one = "true";
+                    img_four.setImageResource(R.drawable.check_icon);
+                    wifi =false;
+                }else
+                {
+                    wifi_one = "false";
+                    img_four.setImageResource(R.drawable.circle_gray);
+                    wifi =true;
+                }
+
+            }
+        });
+
 
         RR_next_house.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,7 +179,7 @@ public class HouseOption extends AppCompatActivity {
                 intent.putExtra("lat",latitude);
                 intent.putExtra("lon",longitude);
                 startActivity(intent);
-
+                finish();
 /*                Intent intent = new Intent(HouseOption.this, PriceListActivity.class);
                 startActivity(intent);*/
             }

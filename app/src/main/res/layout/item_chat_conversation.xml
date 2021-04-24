@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/card_item1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grayLight"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:layout_marginTop="3dp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Today"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/grayLight"
+            android:gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:id="@+id/LL_left_layOut"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txt_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/g_chat1"
+                android:textAlignment="center"
+                android:text="Hi, Leyla parker"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:paddingTop="@dimen/padding8"
+                android:paddingLeft="@dimen/padding10"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/txt_status_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="5 min ago"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginLeft="100dp"
+                android:textColor="@color/colorGray"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LL_right_layOut"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:paddingRight="80dp"
+                android:paddingLeft="@dimen/padding20"
+                android:backgroundTint="@color/color_txtBlue"
+                android:background="@drawable/g_chat2"
+                android:layout_gravity="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="@dimen/padding5"
+                    android:gravity="center"
+                    android:id="@+id/txt_Right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Harshit"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+
+
+
+
+            <TextView
+                android:id="@+id/txt_status_Right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="1 min ago"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_marginRight="@dimen/padding50"
+                android:layout_gravity="end"
+                android:textColor="@color/colorGray"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

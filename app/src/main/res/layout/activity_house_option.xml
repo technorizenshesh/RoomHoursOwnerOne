@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#F1F2FA"
+    android:background="@color/grayLight"
     android:layout_height="match_parent"
    >
 
@@ -35,7 +35,7 @@
                         android:textSize="@dimen/padding22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="House Options (Multiple CheckBox -The Options available can be clickable as a checkbox)" />
+                        android:text="@string/house_options" />
 
 
                     <RelativeLayout
@@ -54,9 +54,9 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="@dimen/padding10"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/restroom"
-                            android:layout_width="@dimen/padding30"
-                            android:layout_height="@dimen/padding30"
+                            android:src="@drawable/bath"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
                             >
                         </ImageView>
 
@@ -79,7 +79,7 @@
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Private bathroom" />
+                                android:text="@string/private_bathroom" />
 
                             <TextView
                                 android:layout_below="@+id/txt_bath"
@@ -89,7 +89,7 @@
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="in the room" />
+                                android:text="@string/in_the_room" />
 
                         </RelativeLayout>
 
@@ -123,9 +123,9 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="@dimen/padding10"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/air_condotion"
-                            android:layout_width="@dimen/padding30"
-                            android:layout_height="@dimen/padding30"
+                            android:src="@drawable/acc"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
                             >
                         </ImageView>
 
@@ -148,7 +148,7 @@
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Air" />
+                                android:text="@string/air" />
 
                             <TextView
                                 android:layout_below="@+id/txt_air"
@@ -158,7 +158,7 @@
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Conditioned" />
+                                android:text="@string/conditioned" />
 
                         </RelativeLayout>
 
@@ -191,9 +191,9 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="@dimen/padding10"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/heater"
-                            android:layout_width="@dimen/padding30"
-                            android:layout_height="@dimen/padding30"
+                            android:src="@drawable/track"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
                             >
                         </ImageView>
 
@@ -216,13 +216,72 @@
                                 android:textStyle="bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Heating" />
+                                android:text="@string/heating" />
 
 
                         </RelativeLayout>
 
                         <ImageView
                             android:id="@+id/img_three"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/padding10"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/circle_gray"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            >
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/RR_Wifi"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/padding20"
+                        android:layout_marginLeft="@dimen/padding15"
+                        android:layout_marginRight="@dimen/padding15"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_toLeftOf="@+id/RR_filter"
+                        android:background="@drawable/roundbttn_white_one">
+
+                        <ImageView
+                            android:id="@+id/img_wifi"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/padding10"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/icon_wifi"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            >
+                        </ImageView>
+
+
+                        <RelativeLayout
+                            android:orientation="vertical"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/padding20"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/img_wifi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <TextView
+                                android:id="@+id/txt_wifi"
+                                android:singleLine="true"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/padding20"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/wifi" />
+
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/img_four"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="@dimen/padding10"
                             android:layout_centerVertical="true"
@@ -262,6 +321,7 @@
                             </ImageView>
 
                             <TextView
+                                android:layout_centerHorizontal="true"
                                 android:layout_marginLeft="@dimen/padding20"
                                 android:textSize="@dimen/padding16"
                                 android:textStyle="bold"
@@ -269,7 +329,7 @@
                                 android:textColor="@color/white"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Next"
+                                android:text="@string/next"
                                 />
 
                         </RelativeLayout>

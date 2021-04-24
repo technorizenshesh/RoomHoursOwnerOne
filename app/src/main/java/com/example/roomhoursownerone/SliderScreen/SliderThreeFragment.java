@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
 import androidx.fragment.app.Fragment;
 
 import com.example.roomhoursownerone.MainActivityLogin;
@@ -17,7 +19,7 @@ import com.example.roomhoursownerone.R;
 public class SliderThreeFragment extends Fragment {
 
     private View view;
-    private ImageView img_skip_three;
+    private RelativeLayout img_skip;
 
     public SliderThreeFragment() {
         // Required empty public constructor
@@ -29,8 +31,8 @@ public class SliderThreeFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_slider_three, container, false);
 
-        img_skip_three = view.findViewById(R.id.img_skip_three);
-        img_skip_three.setOnClickListener(new View.OnClickListener() {
+        img_skip = view.findViewById(R.id.img_skip);
+        img_skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), MainActivityLogin.class);

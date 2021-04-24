@@ -59,7 +59,6 @@ public class CurrentLocation extends AppCompatActivity {
 
     String latitude ="0.0";
     String longitude ="0.0";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,8 +82,8 @@ public class CurrentLocation extends AppCompatActivity {
             City = intent.getStringExtra("City").toString();
             Street = intent.getStringExtra("Street").toString();
             ZipCode = intent.getStringExtra("ZipCode").toString();
-            latitude = intent.getStringExtra("lat").toString();
-            latitude = intent.getStringExtra("lon").toString();
+           latitude = intent.getStringExtra("lat").toString();
+            longitude = intent.getStringExtra("lon").toString();
 
             edt_countryt_street.setText(Street);
             edt_zipCode.setText(ZipCode);
@@ -102,11 +101,11 @@ public class CurrentLocation extends AppCompatActivity {
 
                 if(Street.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(CurrentLocation.this, "Please Enter Street,number,floor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CurrentLocation.this, getString(R.string.street_flowr), Toast.LENGTH_SHORT).show();
 
                 }if(ZipCode.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(CurrentLocation.this, "Please Enter ZipCode", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CurrentLocation.this, getString(R.string.zipcode), Toast.LENGTH_SHORT).show();
 
                 }else
                 {
@@ -120,6 +119,8 @@ public class CurrentLocation extends AppCompatActivity {
                     intent.putExtra("lat",latitude);
                     intent.putExtra("lon",longitude);
                     startActivity(intent);
+                    finish();
+
                 }
             }
         });

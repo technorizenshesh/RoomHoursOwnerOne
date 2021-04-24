@@ -1,12 +1,16 @@
 package com.example.roomhoursownerone.Title;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.roomhoursownerone.HouseOption.HouseOption;
 import com.example.roomhoursownerone.MapsActivity;
@@ -31,6 +35,15 @@ public class AddTitle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_title);
+
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(ContextCompat.getColor(
+                    this, R.color.mehroon));
+        }
+
 
         RR_title= findViewById(R.id.RR_title);
         edt_title= findViewById(R.id.edt_title);
@@ -57,11 +70,11 @@ public class AddTitle extends AppCompatActivity {
                 String description =edt_description.getText().toString();
                 if(Title.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(AddTitle.this, "Please Enter Title.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddTitle.this, getString(R.string.enter_title), Toast.LENGTH_SHORT).show();
 
                 }else if(description.equalsIgnoreCase(""))
                 {
-                    Toast.makeText(AddTitle.this, "Please Enter description.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddTitle.this, getString(R.string.enter_description), Toast.LENGTH_SHORT).show();
 
                 }else {
 
@@ -76,6 +89,7 @@ public class AddTitle extends AppCompatActivity {
                     intent.putExtra("lat",latitude);
                     intent.putExtra("lon",longitude);
                     startActivity(intent);
+                    finish();
 
                 }
             }

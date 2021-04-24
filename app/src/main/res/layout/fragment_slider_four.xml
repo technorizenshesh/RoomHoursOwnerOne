@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grayLight"
     >
 
     <LinearLayout
@@ -21,18 +22,20 @@
         </ImageView>
 
         <TextView
+            android:gravity="center"
             android:layout_gravity="center"
             android:layout_below="@+id/img_logo"
             android:layout_marginTop="@dimen/padding20"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Say Thankyou"
+            android:text="@string/say_thankyou"
             android:textColor="#A81D1A"
             android:textSize="@dimen/padding25"/>
 
 
         <TextView
+            android:gravity="center"
             android:layout_marginRight="@dimen/padding20"
             android:layout_marginLeft="@dimen/padding20"
             android:layout_below="@+id/RR_bien"
@@ -84,8 +87,32 @@
 
     </LinearLayout>
 
+
+
     <RelativeLayout
+        android:layout_marginRight="-10dp"
+        android:layout_marginBottom="@dimen/_20sdp"
         android:id="@+id/img_skip_three"
+        android:background="@drawable/edt_skip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="@dimen/_40sdp">
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:layout_marginTop="@dimen/padding10"
+            android:textSize="@dimen/_16sdp"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
         android:layout_marginBottom="@dimen/padding10"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -96,7 +123,7 @@
 
         <TextView
             android:layout_centerInParent="true"
-            android:text="Next"
+            android:text="@string/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/padding25"

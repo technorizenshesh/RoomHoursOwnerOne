@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.roomhoursownerone.HomeScreen.HomeActivity;
 import com.example.roomhoursownerone.R;
 
 public class DoneActivity extends AppCompatActivity {
@@ -22,8 +23,8 @@ public class DoneActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*Intent intent = new Intent(DoneActivity.this, HomeActivity.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(DoneActivity.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
     }
