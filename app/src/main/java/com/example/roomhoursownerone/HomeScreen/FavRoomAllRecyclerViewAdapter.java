@@ -70,7 +70,11 @@ public class FavRoomAllRecyclerViewAdapter extends RecyclerView.Adapter<Recycler
             final GetFavModelData model = getItem(position);
             final ViewHolder genericViewHolder = (ViewHolder) holder;
 
-            genericViewHolder.txt_selection_mode.setText(model.getSlectTionMode().toString());
+
+           // genericViewHolder.txt_selection_mode.setText(model.getSlectTionMode().toString());
+
+
+
             genericViewHolder.product_name.setText(model.getTitle().toString());
 
 

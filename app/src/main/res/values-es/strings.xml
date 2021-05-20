@@ -4,7 +4,8 @@
 <string name="app_name">HabitaciónHorasPropietarioOne</string>
     <string name="title_activity_maps">Mapa</string>
 
-    <string name="one_slide">Según habitación, cercanía, precio, servicios adicionales...</string>
+    <string name="one_slide">Rellena con toda la información necesaria para que los aniftriones eligan tu habitación.</string>
+    <string name="one_slide11">Según habitación, cercanía precio,servicios adicionales...</string>
     <string name="checkInternet">Por favor revise su conexion a internet</string>
     <string name="title_activity_use_current_location">Mapa</string>
     <string name="facebook_app_id">2448099172163936</string>
@@ -78,7 +79,7 @@ cuenta cuando el Anfitrión es solo una persona)</string>
     <string name="message">Mensajes</string>
     <string name="say_thankyou">Di gracias</string>
     <string name="bienvenido">BIENVENIDO!</string>
-    <string name="encourange_guest_to_book">Anime a los huéspedes a reservar</string>
+    <string name="encourange_guest_to_book">Crea un perfil atractivo</string>
     <string name="host_to_publish">Pública tu habitación librey gana un dinero extra.</string>
     <string name="vjhjhh">vjhjhh</string>
     <string name="select_language">Select Language</string>
@@ -122,6 +123,8 @@ cuenta cuando el Anfitrión es solo una persona)</string>
     <string name="enter_password">Por favor, ingrese contraseña.</string>
     <string name="iempieza_a_general_dinero_desde_ya_mismo">Paga solo por las horas que necesites.</string>
     <string name="dis">Hacer  clic a esta casilla de  verificación,declara que está de acuerdo en aplicar un 30% de descuento cuando el anfitrión sola sea una persona.</string>
+
+    <string name="hay_tu_reserva_ahora">Empieza a hospedar!</string>
 
     <string name="no_data_found">No hay datos</string>
     <string name="wifi">Wifi</string>

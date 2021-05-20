@@ -3,7 +3,7 @@
     <string name="title_activity_maps">Map</string>
 
     <string name="one_slide">Bienvenido a Roomhours, la app que te permite general un dinero extra alquilando tu habitacion libre por haras.</string>
-
+    <string name="one_slide11">Lorem Ipsum dolor sit amet,Consectetier adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Cum Sociis natoque penatibus et magnis dis parturient montes,nascetur ridiculus mus</string>
     <string name="checkInternet">Please Check Your Internet Connection</string>
     <string name="title_activity_use_current_location">Map</string>
     <string name="facebook_app_id">2448099172163936</string>
@@ -77,6 +77,8 @@
     <string name="say_thankyou">Say Thankyou</string>
     <string name="bienvenido">BIENVENIDO!</string>
     <string name="encourange_guest_to_book">Encourange Guest To Book</string>
+
+
     <string name="host_to_publish">Host To Publish</string>
     <string name="vjhjhh">vjhjhh</string>
     <string name="select_language">Select Language</string>
@@ -124,5 +126,6 @@
     <string name="house_options">House Options (Multiple CheckBox -The Options available can be clickable as a checkbox)</string>
     <string name="skip">Skip</string>
     <string name="recommended">Recommended</string>
+    <string name="hay_tu_reserva_ahora">Empieza a hospedar!</string>
 
 </resources>

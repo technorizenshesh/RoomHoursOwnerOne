@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grayLight"
+    android:background="@color/white"
     >
 
     <LinearLayout
@@ -13,7 +13,7 @@
         >
 
         <RelativeLayout
-            android:layout_marginTop="@dimen/padding20"
+            android:layout_marginTop="@dimen/padding40"
             android:layout_gravity="center"
             android:layout_width="@dimen/_200sdp"
             android:layout_height="@dimen/_200sdp"
@@ -21,7 +21,6 @@
             <ImageView
                 android:layout_marginLeft="-8dp"
                 android:layout_marginRight="-8dp"
-                android:layout_marginTop="-8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_tw"
                 android:layout_width="match_parent"
@@ -40,8 +39,9 @@
         </ImageView>
 
         <TextView
-            android:gravity="center"
-            android:layout_gravity="center"
+            android:layout_marginRight="20sp"
+            android:layout_marginLeft="20sp"
+            android:gravity="left"
             android:layout_below="@+id/img_logo"
             android:layout_marginTop="@dimen/padding40"
             android:textStyle="bold"
@@ -53,15 +53,15 @@
 
 
         <TextView
-            android:gravity="center"
+            android:layout_marginTop="@dimen/padding10"
+            android:gravity="left"
             android:layout_marginRight="@dimen/padding20"
             android:layout_marginLeft="@dimen/padding20"
             android:layout_below="@+id/RR_bien"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/one_slide"
-            android:layout_marginTop="@dimen/padding30"
-            android:textSize="@dimen/padding16"
+            android:textSize="@dimen/padding18"
             android:textColor="@color/black" />
 
         <LinearLayout

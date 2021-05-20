@@ -11,32 +11,34 @@ public class OuterSliderAdapter extends FragmentPagerAdapter {
         super(fm);
     }
 
+
     @NonNull
     @Override
     public Fragment getItem(int position) {
         switch (position){
+         //   case 0:
+              /*  SliderOneFragment sliderOneFragment = new SliderOneFragment();
+                return sliderOneFragment;*/
             case 0:
-                SliderOneFragment sliderOneFragment = new SliderOneFragment();
-                return sliderOneFragment;
-            case 1:
                 SliderTwoFragment sliderTwoFragment = new SliderTwoFragment();
                 return sliderTwoFragment;
-            case 2:
+            case 1:
                 SliderThreeFragment sliderThreeFragment = new SliderThreeFragment();
                 return sliderThreeFragment;
-                case 3:
-                    SliderFourFragment sliderFourFragment = new SliderFourFragment();
-                return sliderFourFragment;
-                case 4:
-                    SliderFiveFragment SliderFiveFragment = new SliderFiveFragment();
+            case 2:
+                SliderFiveFragment SliderFiveFragment = new SliderFiveFragment();
                 return SliderFiveFragment;
+          /*      case 3:
+                    SliderFourFragment sliderFourFragment = new SliderFourFragment();
+                return sliderFourFragment;*/
+
             default:
                 return null;
         }
     }
 
     @Override
-    public int getCount() {
-        return 5;
+    public int getCount(){
+        return 3;
     }
 }

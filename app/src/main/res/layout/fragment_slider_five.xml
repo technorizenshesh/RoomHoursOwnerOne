@@ -3,20 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grayLight"
+    android:background="@color/white"
     >
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         >
 
         <RelativeLayout
-            android:layout_marginTop="@dimen/padding20"
+            android:layout_marginTop="@dimen/padding40"
             android:layout_gravity="center"
-            android:layout_width="@dimen/_250sdp"
-            android:layout_height="@dimen/_250sdp"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
             >
             <ImageView
                 android:layout_marginLeft="-5dp"
@@ -37,11 +37,12 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hay tu reserva ahora!"
+            android:text="@string/hay_tu_reserva_ahora"
             android:textColor="#A81D1A"
             android:textSize="@dimen/padding30"/>
 
         <RelativeLayout
+            android:layout_marginBottom="@dimen/_50sdp"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/padding50"
             android:id="@+id/RR_comtinue"
@@ -49,26 +50,18 @@
             android:layout_marginLeft="20dp"
             android:layout_width="@dimen/_200sdp"
             android:background="@drawable/roundbttn_red"
-            android:layout_height="55dp">
+            android:layout_height="@dimen/_55sdp">
 
-            <RelativeLayout
-                android:paddingLeft="@dimen/padding10"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-
-                <TextView
-                    android:layout_centerInParent="true"
-                    android:textSize="@dimen/padding16"
-                    android:textStyle="bold"
-                    android:layout_centerVertical="true"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="QUIERO RESERVAR"
-                    />
-
-            </RelativeLayout>
+            <TextView
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QUIERO EMPEZAR"
+                />
 
 
 
